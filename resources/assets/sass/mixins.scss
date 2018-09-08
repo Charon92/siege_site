@@ -1,0 +1,26 @@
+@mixin button-bg-color($color-one, $color-two, $text-color) {
+    background: linear-gradient(to right, $color-two 0%, $color-two 50%, $color-one 50%, $color-one 100%);
+    background-position: 100% 100%;
+    background-size: 200% 100%;
+    transition: background-position 500ms ease-in-out;
+  
+    cursor: pointer;
+  
+    &:hover {
+      background-position: 0% 100%;
+      color: $text-color;
+    }
+}
+
+@mixin grad_body {
+    background: #575f65;
+    background: -moz-linear-gradient(left, #575f65 0%, #101b24 100%);
+    background: -webkit-linear-gradient(left, #575f65 0%, #101b24 100%);
+    background: linear-gradient(to right, #575f65 0%, #101b24 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#575f65', endColorstr='#101b24',GradientType=1 );
+}
+
+@function calculate-rem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize};
+}

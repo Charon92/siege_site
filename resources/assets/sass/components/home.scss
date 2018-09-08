@@ -1,0 +1,136 @@
+.featured {
+    display: flex;
+    padding: $global-padding;
+
+    .map_container {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        min-height: 200px;
+        max-height: 200px;
+        overflow: hidden;
+        position: relative;
+      
+        .map {
+          width: auto;
+          height: 200px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          transition: all 250ms ease-in-out;
+          -moz-transition: all 250ms ease-in-out;
+          -webkit-transition: all 250ms ease-in-out;
+          -o-transition: all 250ms ease-in-out;
+        }
+      
+        a {
+          height: 35%;
+          width: 100%;
+          text-decoration: none;
+          display: flex;
+          justify-content: flex-end;
+          align-self: flex-end;
+          position: absolute;
+          z-index: 1;
+          top: 0;
+          transition: all 250ms ease-in-out;
+          -moz-transition: all 250ms ease-in-out;
+          -webkit-transition: all 250ms ease-in-out;
+          -o-transition: all 250ms ease-in-out;
+        }
+      
+        .overlay {
+          width: 100%;
+          background-color: $second-bg-color;
+      
+          h4 {
+            margin: 15px;
+          }
+        }
+      
+        &:hover {
+          .map {
+            height: 250px;
+            left: -25px;
+            transition: all 250ms ease-in-out;
+            -moz-transition: all 250ms ease-in-out;
+            -webkit-transition: all 250ms ease-in-out;
+            -o-transition: all 250ms ease-in-out;
+          }
+      
+          a {
+            height: 200px;
+            transition: all 250ms ease-in-out;
+            -moz-transition: all 250ms ease-in-out;
+            -webkit-transition: all 250ms ease-in-out;
+            -o-transition: all 250ms ease-in-out;
+          }
+        }
+    }
+  
+  .operator_container {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    min-height: 200px;
+    max-height: 200px;
+    overflow: hidden;
+    position: relative;
+  
+    .operator {
+      width: auto;
+      height: 200px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: all 250ms ease-in-out;
+      -moz-transition: all 250ms ease-in-out;
+      -webkit-transition: all 250ms ease-in-out;
+      -o-transition: all 250ms ease-in-out;
+    }
+  
+    a {
+      height: 35%;
+      width: 100%;
+      text-decoration: none;
+      display: flex;
+      justify-content: flex-end;
+      align-self: flex-end;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      transition: all 250ms ease-in-out;
+      -moz-transition: all 250ms ease-in-out;
+      -webkit-transition: all 250ms ease-in-out;
+      -o-transition: all 250ms ease-in-out;
+    }
+  
+    .overlay {
+      width: 100%;
+      background-color: $second-bg-color;
+  
+      h4 {
+        margin: 15px;
+      }
+    }
+  
+    &:hover {
+      .operator {
+        height: 250px;
+        left: -25px;
+        transition: all 250ms ease-in-out;
+        -moz-transition: all 250ms ease-in-out;
+        -webkit-transition: all 250ms ease-in-out;
+        -o-transition: all 250ms ease-in-out;
+      }
+  
+      a {
+        height: 200px;
+        transition: all 250ms ease-in-out;
+        -moz-transition: all 250ms ease-in-out;
+        -webkit-transition: all 250ms ease-in-out;
+        -o-transition: all 250ms ease-in-out;
+      }
+    }
+  }
+}

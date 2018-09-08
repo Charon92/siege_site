@@ -1,0 +1,25 @@
+button,
+.button,
+.primary-button,
+input[type=submit] {
+    @include button-bg-color($blue, $main-bg-color, $main-color);
+
+    padding: $global-padding;
+    font-size: 150%;
+    font-weight: bold;
+    font-family: $header-stack;
+    border: none;
+}
+
+.upload-button {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+
+    input[type=file] {
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+    }
+}

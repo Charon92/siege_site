@@ -1,0 +1,172 @@
+.default_ctu {
+  background-image: url('/assets/operators/bg/R6-operator-team-r6.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat-y;
+}
+
+.operator_container {
+  position: relative;
+  box-shadow:inset 0px 0px 0px 2px transparent;
+
+  a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 20%;
+    height: 30%;
+    background-color: $second-bg-color;
+    padding: $global-padding;
+    transition: all 250ms linear;
+  }
+
+  &:hover {
+    box-shadow:inset 0px 0px 0px 2px $main-color;
+
+    a {
+      height: 90%;
+      transition: all 250ms linear;
+    }
+  }
+}
+
+.operator_header_image {
+    width: auto;
+    height: 750px;
+    background-position: center;
+    background-repeat: none;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .op_info {
+    background-color: $second-bg-color;
+    min-height: 300px;
+    margin-top: -100px;
+  }
+  
+  .op_header {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 1% 5%;
+  }
+  
+  .op_body {
+    width: 90%;
+    margin: 1% 5%;
+  
+    .dropdown {
+      border: 1px solid $second-color;
+      margin: 2% auto;
+      background-color: $main-bg-color;
+    }
+  
+    .dropdown_header {
+      display: flex;
+      justify-content: space-between;
+      width: 95%;
+      padding: 0 2.5%;
+      line-height: 20px;
+  
+      @include grad_body;
+  
+      cursor: pointer;
+  
+      .dropper {}
+  
+      h1 {
+        color: $second-color;
+      }
+    }
+  
+    .abilities {
+      min-height: 60px;
+  
+      .info_holder {
+        width: 95%;
+        margin: auto 2.5%;
+      }
+  
+      .ability {
+        width: 95%;
+        margin: auto 2.5%;
+      }
+    }
+  
+    .weapons {
+      .weapons_holder {
+        > h2 {
+          margin: 2.5%;
+        }
+      }
+  
+      .weapons {
+        width: 95%;
+        margin: 2.5%;
+  
+        h2 {
+          margin: auto 2.5%;
+        }
+  
+        ul li {
+          margin: 1% auto;
+        }
+      }
+  
+      .weapon_info {
+        display: flex;
+        flex-direction: row;
+  
+        h6 {
+          margin: 10px auto;
+        }
+      }
+    }
+  }
+
+  /* container backgrounds */
+.korea {
+  background-image: url("/images/operators/bg/korea.jpg");
+}
+
+.poland {
+  background-image: url("/images/operators/bg/poland.jpg");
+}
+
+.hongkong {
+  background-image: url("/images/operators/bg/hongkong.jpg");
+}
+
+.spain {
+  background-image: url("/images/operators/bg/spain.jpg");
+}
+
+.japan {
+  background-image: url("/images/operators/bg/japan.jpg");
+}
+
+.brazil {
+  background-image: url("/images/operators/bg/brazil.jpg");
+}
+
+.seals {
+  background-image: url("/images/operators/bg/seals.jpg");
+}
+
+.canada {
+  background-image: url("/images/operators/bg/canada.jpg");
+}
+
+.british {
+  background-image: url("/images/operators/bg/sas.jpg");
+}
+
+.swat {
+  background-image: url("/images/operators/bg/fbi.jpg");
+}
+
+.russian {
+  background-image: url("/images/operators/bg/russia.jpg")
+}

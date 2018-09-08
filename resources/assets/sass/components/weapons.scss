@@ -1,0 +1,25 @@
+.weapon_container {
+    position: relative;
+    box-shadow:inset 0px 0px 0px 2px transparent;
+
+    a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-height: 20%;
+        height: 40%;
+        background-color: $second-bg-color;
+        padding: $global-padding;
+        transition: all 250ms linear;
+      }
+    
+    &:hover {
+        box-shadow:inset 0px 0px 0px 2px $main-color;
+
+        a {
+            height: 90%;
+            transition: all 250ms linear;
+        }
+    }
+}

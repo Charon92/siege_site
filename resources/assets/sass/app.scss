@@ -1,0 +1,255 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Settings
+@import 'settings';
+
+// Variables
+@import 'variables';
+
+// Mixins
+@import 'mixins';
+
+// Foundation
+@import 'node_modules/foundation-sites/scss/foundation';
+
+@include foundation-everything(true);
+
+// Everything else
+@import 'components/body';
+@import 'components/buttons';
+@import 'components/navigation';
+@import 'components/home';
+@import 'components/operators';
+@import 'components/form';
+@import 'components/weapons';
+@import 'components/images';
+@import '../foundation-icons/foundation-icons.css';
+
+// Video background
+video#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: 0;
+}
+
+// Overlay content over video
+.main,
+nav {
+  position: relative;
+  z-index: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $header_stack;
+  color: #FFF;
+  font-weight: 800;
+}
+
+p,
+a,
+li {
+  font-family: $body_stack;
+  color: #FFF;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* containers */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  color: #FFF;
+}
+
+.container {
+  @include xy-grid-container;
+  position: relative;
+}
+
+.header.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $main-bg-color;
+  padding: $global-padding;
+  position: relative;
+  cursor: pointer;
+
+  &:after {
+    background: url(/images/r6-row-shape.png) 50% 0 no-repeat;
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+  }
+
+  i {
+    font-size: 150%;
+  }
+}
+
+.header_small.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $third-bg-color;
+  margin-top: $global-margin / 2;
+  padding: $global-padding / 2;
+}
+
+.info {
+  padding: $global-padding;
+  background-color: $second-bg-color;
+}
+
+.border-top {
+  margin-top: $global-margin;
+
+  &:before {
+    background: url(/images/r6-row-shape.png) 50% 0 no-repeat;
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1px;
+  }
+}
+
+.textured-bg {
+  background-image: url(/images/r6-siege-v3-bg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* image stylings */
+.header_icon {
+  width: 80%;
+  margin: 5%;
+}
+
+.floorplan {
+  width: 95%;
+  max-width: 1024px;
+  height: auto;
+  border: 3px solid #E1E1E1;
+  margin: auto 2.5%;
+}
+
+img.weapon {
+  width: 95%;
+  max-width: 1024px;
+  height: auto;
+  border: 3px solid #E1E1E1;
+  margin: auto 2.5%;
+}
+
+/* map pages */
+.header_image {
+  width: 100%;
+  height: 300px;
+  background-position: center;
+  background-repeat: none;
+  background-size: cover;
+}
+
+.map_info {
+  background-color: $second-bg-color;
+  min-height: 300px;
+  margin-top: -100px;
+}
+
+.map_header {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 1% 5%;
+}
+
+.map_body {
+  width: 90%;
+  margin: 1% 5%;
+
+  .dropdown {
+    border: 1px solid $second-color;
+    margin: 2% auto;
+    background-color: $main-bg-color;
+  }
+
+  .dropdown_header {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    padding: 0 2.5%;
+    line-height: 20px;
+
+    @include grad_body;
+
+    cursor: pointer;
+
+    .dropper {}
+
+    h1 {
+      color: $second-color;
+    }
+  }
+
+  .floors {
+    min-height: 60px;
+
+    .info_holder {}
+
+    .floor {
+      width: 95%;
+      margin: auto 2.5%;
+    }
+  }
+
+  .tips {
+    .tips_holder {
+      > h2 {
+        margin: 2.5%;
+      }
+    }
+
+    .tip {
+      width: 95%;
+      margin: 2.5%;
+
+      h2 {
+        margin: auto 2.5%;
+      }
+
+      ul li {
+        margin: 1% auto;
+      }
+    }
+  }
+}
+

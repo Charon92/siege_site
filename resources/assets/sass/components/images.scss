@@ -1,0 +1,17 @@
+.image-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 90vh;
+    height: 100%;
+}
+.main-image {
+    position: sticky;
+    bottom: 0;
+}
+
+.ability-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: $global-margin;
+}
