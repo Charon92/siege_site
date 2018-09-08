@@ -54,53 +54,7 @@ $tips[001] = [
       ],
     ],
     "hostage" => [
-      "type" => "hostage",
-      "locations" => [
-        "Vault" => [
-          "title" => "Vault",
-          "hiding_spots" => [
-            1 => "Behind Money Desk",
-            2 => "In Gold Vault",
-            3 => "In Lockers",
-            4 => "Elevators",
-            5 => "Archives",
-            6 => "Open Area"
-          ],
-        ],
-        "Tellers Office" => [
-          "title" => "Tellers Office",
-          "hiding_spots" => [
-            1 => "Archives",
-            2 => "Staff Room",
-            3 => "Tellers Office - Desk",
-            4 => "Tellers Office - Cabinet",
-            5 => "Elevators",
-            6 => "Executive Lounge",
-            7 => "Conference Room",
-          ],
-        ],
-        "Staff Room" => [
-          "title" => "Staff Room",
-          "hiding_spots" => [
-            1 => "Open Area",
-            2 => "Admin Office",
-            3 => "Archives",
-            4 => "Stock Trading Room",
-            5 => "Server Room/Stairs",
-          ],
-        ],
-        "CEO Office" => [
-          "title" => "CEO Office",
-          "hiding_spots" => [
-            1 => "Janitor Closet",
-            2 => "Behind Desk",
-            3 => "Conference Room",
-            4 => "Executive Lounge",
-            5 => "Stock Trading Room",
-            6 => "Elevators",
-          ],
-        ],
-		  ],
+
     ],
     "secure" => [
 

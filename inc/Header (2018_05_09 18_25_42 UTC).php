@@ -12,16 +12,16 @@
     <meta property="og:type" content="website" />
     <meta property="og:description" content="Delving deep into the murky depths of the philosophical world hidden within the realm of games." />
     <link rel="shortcut icon" type="image/x-icon" href="Images/icon.ico">
-    <link rel="stylesheet" href="/inc/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/siege_site/inc/css/style.css" type="text/css">
   </head>
   <body>
     <nav class="flex_row">
       <a href="/siege_site" class="span2">
-      <img class="header_icon" src="/assets/full/header_logo.png" />
+      <img class="header_icon" src="/siege_site/assets/full/header_logo.png" />
     </a>
       <ul class="flex_row">
-        <li><a href="/all-maps.php">All Maps</a></li>
-        <li><a href="/all-operators.php">All Operators</a></li>
+        <li><a href="">Test</a></li>
+        <li><a href="">Test</a></li>
         <li><a href="">Test</a></li>
       </ul>
     </nav>

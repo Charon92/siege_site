@@ -101,10 +101,6 @@ body {
 .span6 {
   width: 50%; }
 
-.span6-p {
-  width: 45%;
-  padding: 2.5%; }
-
 .span5 {
   width: 41.6%; }
 
@@ -124,24 +120,6 @@ body {
 
 .span1 {
   width: 8.3%; }
-
-.border-top {
-  border-top: 1px solid #101b24; }
-
-.main-button {
-  width: 25%;
-  height: 40px;
-  margin: 20px auto;
-  border: 2px solid #E1E1E1;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background: linear-gradient(to right, #101b24 0%, #101b24 50%, rgba(16, 26, 36, 0.75) 50%, rgba(16, 26, 36, 0.75) 100%);
-  background-position: 100% 100%;
-  background-size: 200% 100%;
-  transition: background-position 500ms ease-in-out; }
-  .main-button:hover {
-    background-position: 0 0; }
 
 nav {
   background-color: rgba(16, 26, 36, 0.75);
@@ -167,135 +145,20 @@ nav {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  min-height: 200px;
-  max-height: 200px;
-  overflow: hidden;
-  position: relative; }
-  .map_container .map {
-    width: auto;
-    height: 200px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: all 250ms ease-in-out;
-    -moz-transition: all 250ms ease-in-out;
-    -webkit-transition: all 250ms ease-in-out;
-    -o-transition: all 250ms ease-in-out; }
+  min-height: 200px; }
   .map_container a {
-    height: 35%;
+    height: 100%;
     width: 100%;
     text-decoration: none;
     display: flex;
     justify-content: flex-end;
-    align-self: flex-end;
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    transition: all 250ms ease-in-out;
-    -moz-transition: all 250ms ease-in-out;
-    -webkit-transition: all 250ms ease-in-out;
-    -o-transition: all 250ms ease-in-out; }
-  .map_container .overlay {
-    width: 100%;
-    background-color: rgba(16, 26, 36, 0.75); }
-    .map_container .overlay h4 {
-      margin: 15px; }
-  .map_container:hover .map {
-    height: 250px;
-    left: -25px;
-    transition: all 250ms ease-in-out;
-    -moz-transition: all 250ms ease-in-out;
-    -webkit-transition: all 250ms ease-in-out;
-    -o-transition: all 250ms ease-in-out; }
-  .map_container:hover a {
-    height: 200px;
-    transition: all 250ms ease-in-out;
-    -moz-transition: all 250ms ease-in-out;
-    -webkit-transition: all 250ms ease-in-out;
-    -o-transition: all 250ms ease-in-out; }
+    align-self: flex-end; }
 
-/* Operator homepage */
-/* container backgrounds */
-.korea {
-  background-image: url("/siege_site/assets/operators/bg/korea.jpg"); }
-
-.poland {
-  background-image: url("/siege_site/assets/operators/bg/poland.jpg"); }
-
-.hongkong {
-  background-image: url("/siege_site/assets/operators/bg/hongkong.jpg"); }
-
-.spain {
-  background-image: url("/siege_site/assets/operators/bg/spain.jpg"); }
-
-.japan {
-  background-image: url("/siege_site/assets/operators/bg/japan.jpg"); }
-
-.brazil {
-  background-image: url("/siege_site/assets/operators/bg/brazil.jpg"); }
-
-.seals {
-  background-image: url("/siege_site/assets/operators/bg/seals.jpg"); }
-
-.canada {
-  background-image: url("/siege_site/assets/operators/bg/canada.jpg"); }
-
-.british {
-  background-image: url("/siege_site/assets/operators/bg/sas.jpg"); }
-
-.swat {
-  background-image: url("/siege_site/assets/operators/bg/fbi.jpg"); }
-
-.operator_container {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top;
-  min-height: 200px;
-  max-height: 200px;
-  overflow: hidden;
-  position: relative; }
-  .operator_container .operator {
-    width: auto;
-    height: 200px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: all 250ms ease-in-out;
-    -moz-transition: all 250ms ease-in-out;
-    -webkit-transition: all 250ms ease-in-out;
-    -o-transition: all 250ms ease-in-out; }
-  .operator_container a {
-    height: 35%;
-    width: 100%;
-    text-decoration: none;
-    display: flex;
-    justify-content: flex-end;
-    align-self: flex-end;
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    transition: all 250ms ease-in-out;
-    -moz-transition: all 250ms ease-in-out;
-    -webkit-transition: all 250ms ease-in-out;
-    -o-transition: all 250ms ease-in-out; }
-  .operator_container .overlay {
-    width: 100%;
-    background-color: rgba(16, 26, 36, 0.75); }
-    .operator_container .overlay h4 {
-      margin: 15px; }
-  .operator_container:hover .operator {
-    height: 250px;
-    left: -25px;
-    transition: all 250ms ease-in-out;
-    -moz-transition: all 250ms ease-in-out;
-    -webkit-transition: all 250ms ease-in-out;
-    -o-transition: all 250ms ease-in-out; }
-  .operator_container:hover a {
-    height: 200px;
-    transition: all 250ms ease-in-out;
-    -moz-transition: all 250ms ease-in-out;
-    -webkit-transition: all 250ms ease-in-out;
-    -o-transition: all 250ms ease-in-out; }
+.overlay {
+  width: 100%;
+  background-color: rgba(16, 26, 36, 0.75); }
+  .overlay h4 {
+    margin: 15px; }
 
 /* image stylings */
 .header_icon {
@@ -303,13 +166,6 @@ nav {
   margin: 5%; }
 
 .floorplan {
-  width: 95%;
-  max-width: 1024px;
-  height: auto;
-  border: 3px solid #E1E1E1;
-  margin: auto 2.5%; }
-
-img.weapon {
   width: 95%;
   max-width: 1024px;
   height: auto;
@@ -348,11 +204,7 @@ img.weapon {
     width: 95%;
     padding: 0 2.5%;
     line-height: 20px;
-    background: #575f65;
-    background: -moz-linear-gradient(left, #575f65 0%, #101b24 100%);
-    background: -webkit-linear-gradient(left, #575f65 0%, #101b24 100%);
-    background: linear-gradient(to right, #575f65 0%, #101b24 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#575f65', endColorstr='#101b24',GradientType=1 );
+    background-color: rgba(255, 255, 255, 0.1);
     cursor: pointer; }
     .map_body .dropdown_header h1 {
       color: #FFDB00; }
@@ -361,8 +213,6 @@ img.weapon {
     .map_body .floors .floor {
       width: 95%;
       margin: auto 2.5%; }
-  .map_body .tips .tips_holder > h2 {
-    margin: 2.5%; }
   .map_body .tips .tip {
     width: 95%;
     margin: 2.5%; }
@@ -370,69 +220,5 @@ img.weapon {
       margin: auto 2.5%; }
     .map_body .tips .tip ul li {
       margin: 1% auto; }
-
-/* operator pages */
-.operator_header_image {
-  width: auto;
-  height: 750px;
-  background-position: center;
-  background-repeat: none;
-  background-size: contain;
-  background-repeat: no-repeat; }
-
-.op_info {
-  background-color: rgba(16, 26, 36, 0.75);
-  min-height: 300px;
-  margin-top: -100px; }
-
-.op_header {
-  display: flex;
-  justify-content: space-between;
-  width: 90%;
-  margin: 1% 5%; }
-
-.op_body {
-  width: 90%;
-  margin: 1% 5%; }
-  .op_body .dropdown {
-    border: 1px solid #FFDB00;
-    margin: 2% auto;
-    background-color: #101b24; }
-  .op_body .dropdown_header {
-    display: flex;
-    justify-content: space-between;
-    width: 95%;
-    padding: 0 2.5%;
-    line-height: 20px;
-    background: #575f65;
-    background: -moz-linear-gradient(left, #575f65 0%, #101b24 100%);
-    background: -webkit-linear-gradient(left, #575f65 0%, #101b24 100%);
-    background: linear-gradient(to right, #575f65 0%, #101b24 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#575f65', endColorstr='#101b24',GradientType=1 );
-    cursor: pointer; }
-    .op_body .dropdown_header h1 {
-      color: #FFDB00; }
-  .op_body .abilities {
-    min-height: 60px; }
-    .op_body .abilities .info_holder {
-      width: 95%;
-      margin: auto 2.5%; }
-    .op_body .abilities .ability {
-      width: 95%;
-      margin: auto 2.5%; }
-  .op_body .weapons .weapons_holder > h2 {
-    margin: 2.5%; }
-  .op_body .weapons .weapons {
-    width: 95%;
-    margin: 2.5%; }
-    .op_body .weapons .weapons h2 {
-      margin: auto 2.5%; }
-    .op_body .weapons .weapons ul li {
-      margin: 1% auto; }
-  .op_body .weapons .weapon_info {
-    display: flex;
-    flex-direction: row; }
-    .op_body .weapons .weapon_info h6 {
-      margin: 10px auto; }
 
 /*# sourceMappingURL=style.css.map */
