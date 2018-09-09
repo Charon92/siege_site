@@ -8,6 +8,8 @@
 .operator_container {
   position: relative;
   box-shadow:inset 0px 0px 0px 2px transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   a {
     position: absolute;
@@ -73,8 +75,6 @@
       @include grad_body;
   
       cursor: pointer;
-  
-      .dropper {}
   
       h1 {
         color: $second-color;

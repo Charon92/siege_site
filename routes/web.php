@@ -16,8 +16,14 @@
  */
 
 Route::get('/', 'HomeController@index')->name('home');
+
+Route::get('/operators', 'HomeController@view_operators')->name('allOperators');
 Route::get('/operator/id={id}', 'HomeController@operator')->name('viewOperator');
+
+Route::get('/weapons', 'HomeController@view_weapons')->name('allWeapons');
 Route::get('/weapon/id={id}', 'HomeController@weapon')->name('viewWeapon');
+
+Route::get('/maps', 'HomeController@maps')->name('allMaps');
 Route::get('/map/id={id}', 'HomeController@map')->name('viewMap');
 
 /**

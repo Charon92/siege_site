@@ -32,6 +32,13 @@ class HomeController extends Controller
         return view( 'home', ['operators' => $operators, 'weapons' => $weapons] );
     }
 
+    public function view_operators()
+    {
+        $operators = DB::table( 'operator' )->get();
+
+        return view( 'pages.all-operators', ['operators' => $operators] );
+    }
+
     /**
      * @param integer $id
      */
@@ -40,6 +47,13 @@ class HomeController extends Controller
         $operator = DB::table( 'operator' )->where('id', $id)->get();
 
         return view( 'pages.operator', ['operator' => $operator] );
+    }
+
+    public function view_weapons()
+    {
+        $weapons = DB::table( 'weapon' )->get();
+
+        return view( 'pages.all-weapons', ['weapons' => $weapons] );
     }
 
     /**
@@ -151,6 +165,9 @@ class HomeController extends Controller
         // Check if an image with the same name exists (it shouldn't but hey, who knows right?)
         // If it does, delete it
         // Upload images to correct directorys
+
+        ini_set('max_file_size','6M');
+        ini_set('memory_limit','256M');
       
         $fullimage = $request->file('fullimage');
         $fullimageName = $fullimage->getClientOriginalName();
@@ -238,6 +255,9 @@ class HomeController extends Controller
 
     public function addWeapons( Request $request ) 
     {
+
+        ini_set('max_file_size','6m');
+        ini_set('memory_limit','256M');
 
         // Upload images to correct directorys
         $image = $request->file('image');

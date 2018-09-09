@@ -8,7 +8,7 @@
 @section('title', 'Rainbow Six Siege')
 
 @section('content')
-<div class="column container">
+<div class="column">
 
     <div class="header row">
         <h2 class="large-12">Operators</h2>

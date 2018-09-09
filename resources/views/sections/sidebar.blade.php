@@ -41,7 +41,21 @@
                 </li>
             </ul>
             @else
+            <ul class="vertical menu">
 
+                <li class="{{ Route::currentRouteName() == 'operators' ? 'active' : '' }}">
+                    <a href="{{ route( 'allOperators' ) }}">Operators</a>
+                </li>
+
+                <li class="{{ Route::currentRouteName() == 'weapons' ? 'active' : '' }}">
+                    <a href="{{ route( 'allWeapons' ) }}">Weapons</a>
+                </li>
+
+                <li class="{{ Route::currentRouteName() == 'weapons' ? 'active' : '' }}">
+                    <a href="{{ route( 'allMaps' ) }}">Maps</a>
+                </li>
+
+            </ul>
             @endif
         </div>
     </div>
