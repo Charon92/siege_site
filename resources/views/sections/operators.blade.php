@@ -2,51 +2,55 @@
 
 @switch ($operator->ctu)
   @case('707th SMB')
-  <div class="korea operator_container large-3 small-6">
+  <div class="korea operator_container large-2 medium-4 small-6">
   @break
 
   @case('GROM')
-  <div class="poland operator_container large-3 small-6">
+  <div class="poland operator_container large-2 medium-4 small-6">
   @break
 
   @case('S.D.U')
-  <div class="hongkong operator_container large-3 small-6">
+  <div class="hongkong operator_container large-2 medium-4 small-6">
   @break
 
   @case('G.E.O')
-  <div class="spain operator_container large-3 small-6">
+  <div class="spain operator_container large-2 medium-4 small-6">
   @break
 
   @case('S.D.F')
-  <div class="japan operator_container large-3 small-6">
+  <div class="japan operator_container large-2 medium-4 small-6">
   @break
 
   @case('BOPE')
-  <div class="brazil operator_container large-3 small-6">
+  <div class="brazil operator_container large-2 medium-4 small-6">
   @break
 
   @case('Navy Seals')
-  <div class="seals operator_container large-3 small-6">
+  <div class="seals operator_container large-2 medium-4 small-6">
   @break
 
   @case('JTF')
-  <div class="canada operator_container large-3 small-6">
+  <div class="canada operator_container large-2 medium-4 small-6">
   @break
 
   @case('S.A.S')
-  <div class="british operator_container large-3 small-6">
+  <div class="british operator_container large-2 medium-4 small-6">
   @break
 
   @case('Spetsnaz')
-  <div class="russian operator_container large-3 small-6">
+  <div class="russian operator_container large-2 medium-4 small-6">
   @break
 
   @case('SWAT')
-  <div class="swat operator_container large-3 small-6">
+  <div class="swat operator_container large-2 medium-4 small-6">
+  @break
+
+  @case('GSG-9')
+  <div class="germany operator_container large-2 medium-4 small-6">
   @break
 
   @default
-  <div class="operator_container default_ctu large-3 small-6">
+  <div class="operator_container default_ctu large-2 medium-4 small-6">
 
 @endswitch
 

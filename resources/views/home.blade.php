@@ -1,6 +1,7 @@
 @php
     $operatorPageRoute = 'viewOperator';
-    $weaponPageRoute = 'viewWeapon';    
+    $weaponPageRoute = 'viewWeapon';
+    $postPageRoute = 'viewPost';    
 @endphp
 
 @extends('layouts.base')
@@ -9,6 +10,10 @@
 
 @section('content')
 <div class="column">
+
+    <div class="grid-x">
+        @include( 'sections.recentOperators' )
+    </div>
 
     <div class="header row">
         <h2 class="large-12">Operators</h2>

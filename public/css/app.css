@@ -10,7 +10,7 @@
   src: url(/fonts/foundation-icons.eot?92827f088b9eda87169bdc2b9888ce52?#iefix) format("embedded-opentype"),
        url(/fonts/foundation-icons.woff?a188c2f768ce5033d3f5d47be7280e25) format("woff"),
        url(/fonts/foundation-icons.ttf?e20945d7c929279ef7a6f1db184a4470) format("truetype"),
-       url(/images/foundation-icons.svg?17cb1ed2e8467b51bb26cf017daa9722#fontcustom) format("svg");
+       url(/images/foundation-icons.svg?6f6efe8db841e64f6af7c3e1fc2530c7#fontcustom) format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -8838,6 +8838,10 @@ html.is-reveal-open body {
   }
 }
 
+.center {
+  margin: 0 auto;
+}
+
 button,
 .button,
 .primary-button,
@@ -8877,6 +8881,50 @@ input[type=submit]:hover {
   opacity: 0;
 }
 
+.sidebar-container {
+  position: fixed;
+  left: 0;
+  -webkit-transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  z-index: 1000;
+}
+
+.sidebar-container.left {
+  left: -260px;
+  -webkit-transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.title-bar {
+  max-height: 105px;
+  height: 105px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: transparent;
+  padding: 0;
+}
+
+.title-bar button.menu-icon {
+  background: rgba(16, 26, 36, 0.75);
+  height: 100%;
+  padding: 1rem;
+  margin: 0;
+  width: 105px;
+}
+
+.title-bar button.menu-icon:after {
+  position: relative;
+}
+
 .nav {
   position: relative;
   height: 100%;
@@ -8898,11 +8946,10 @@ input[type=submit]:hover {
 }
 
 .nav .fixed {
-  position: fixed;
+  position: relative;
   height: 100vh;
   max-height: 100vh;
   width: 100%;
-  max-width: 16.6666667%;
   padding: 0;
   background: rgba(0, 0, 0, 0.65);
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
@@ -9046,75 +9093,6 @@ input[type=submit]:hover {
   -o-transition: all 250ms ease-in-out;
 }
 
-.featured .operator_container {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top;
-  min-height: 200px;
-  max-height: 200px;
-  overflow: hidden;
-  position: relative;
-}
-
-.featured .operator_container .operator {
-  width: auto;
-  height: 200px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: all 250ms ease-in-out;
-  -moz-transition: all 250ms ease-in-out;
-  -webkit-transition: all 250ms ease-in-out;
-  -o-transition: all 250ms ease-in-out;
-}
-
-.featured .operator_container a {
-  height: 35%;
-  width: 100%;
-  text-decoration: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  transition: all 250ms ease-in-out;
-  -moz-transition: all 250ms ease-in-out;
-  -webkit-transition: all 250ms ease-in-out;
-  -o-transition: all 250ms ease-in-out;
-}
-
-.featured .operator_container .overlay {
-  width: 100%;
-  background-color: rgba(16, 26, 36, 0.75);
-}
-
-.featured .operator_container .overlay h4 {
-  margin: 15px;
-}
-
-.featured .operator_container:hover .operator {
-  height: 250px;
-  left: -25px;
-  transition: all 250ms ease-in-out;
-  -moz-transition: all 250ms ease-in-out;
-  -webkit-transition: all 250ms ease-in-out;
-  -o-transition: all 250ms ease-in-out;
-}
-
-.featured .operator_container:hover a {
-  height: 200px;
-  transition: all 250ms ease-in-out;
-  -moz-transition: all 250ms ease-in-out;
-  -webkit-transition: all 250ms ease-in-out;
-  -o-transition: all 250ms ease-in-out;
-}
-
 .default_ctu {
   background-image: url("/assets/operators/bg/R6-operator-team-r6.jpg");
   background-size: cover;
@@ -9126,24 +9104,21 @@ input[type=submit]:hover {
   position: relative;
   -webkit-box-shadow: inset 0px 0px 0px 2px transparent;
           box-shadow: inset 0px 0px 0px 2px transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .operator_container a {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
-  width: 100%;
   min-height: 20%;
-  height: 30%;
+  height: 20px;
+  width: 100%;
   background-color: rgba(16, 26, 36, 0.75);
   padding: 1rem;
   -webkit-transition: all 250ms linear;
   transition: all 250ms linear;
-}
-
-.operator_container:hover {
-  -webkit-box-shadow: inset 0px 0px 0px 2px #d1f5ff;
-          box-shadow: inset 0px 0px 0px 2px #d1f5ff;
 }
 
 .operator_container:hover a {
@@ -9301,6 +9276,10 @@ input[type=submit]:hover {
   background-image: url("/images/operators/bg/russia.jpg");
 }
 
+.germany {
+  background-image: url("/images/operators/bg/gsg9.jpg");
+}
+
 form.styled {
   width: 100%;
   margin: 0 auto;
@@ -9386,6 +9365,15 @@ form.styled.show {
   position: relative;
   -webkit-box-shadow: inset 0px 0px 0px 2px transparent;
           box-shadow: inset 0px 0px 0px 2px transparent;
+  max-height: 180px;
+  overflow: hidden;
+}
+
+.weapon_container .operator {
+  width: 150%;
+  min-width: 100%;
+  min-height: 100%;
+  height: auto;
 }
 
 .weapon_container a {
@@ -9485,6 +9473,7 @@ body {
   padding: 0;
   font-size: 16px;
   color: #FFF;
+  overflow-x: hidden;
 }
 
 .container {

@@ -13,18 +13,17 @@
 
   a {
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
-    width: 100%;
     min-height: 20%;
-    height: 30%;
+    height: 20px;
+    width: 100%;
     background-color: $second-bg-color;
     padding: $global-padding;
     transition: all 250ms linear;
   }
 
   &:hover {
-    box-shadow:inset 0px 0px 0px 2px $main-color;
 
     a {
       height: 90%;
@@ -169,4 +168,8 @@
 
 .russian {
   background-image: url("/images/operators/bg/russia.jpg")
+}
+
+.germany {
+  background-image: url("/images/operators/bg/gsg9.jpg")
 }

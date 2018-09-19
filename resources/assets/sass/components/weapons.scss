@@ -1,6 +1,15 @@
 .weapon_container {
     position: relative;
     box-shadow:inset 0px 0px 0px 2px transparent;
+    max-height: 180px;
+    overflow: hidden;
+
+    .operator {
+        width: 150%;
+        min-width: 100%;
+        min-height: 100%;
+        height: auto;
+    }
 
     a {
         position: absolute;

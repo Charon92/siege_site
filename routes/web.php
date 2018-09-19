@@ -26,6 +26,9 @@ Route::get('/weapon/id={id}', 'HomeController@weapon')->name('viewWeapon');
 Route::get('/maps', 'HomeController@maps')->name('allMaps');
 Route::get('/map/id={id}', 'HomeController@map')->name('viewMap');
 
+Route::get('/posts', 'HomeController@maps')->name('allPosts');
+Route::get('/post/id={id}', 'HomeController@map')->name('viewPost');
+
 /**
  * All Admin related routes
  */
@@ -52,4 +55,11 @@ Route::prefix('taratarus')->group(function () {
 
     Route::get('/admin/weapon/edit/{id}', 'HomeController@editWeapon')->name('editWeapon');
     Route::post('/admin/weapon/edit/{id}', 'HomeController@editWeapon');
+
+    // Blog specific pages
+    Route::get('/admin/posts', 'HomeController@posts')->name('posts');
+    Route::post('/admin/posts', 'HomeController@createPost')->name('addPost');
+
+    Route::get('/admin/post/edit/{id}', 'HomeController@editPost')->name('editPost');
+    Route::post('/admin/post/edit/{id}', 'HomeController@editPost');
 });

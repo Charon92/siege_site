@@ -20,14 +20,14 @@
         </video>
         <div class="row grid-x main">
 
-            <div class="large-10 small-12 column body">
+                @component('sections.sidebar')
+            
+                @show
+                @endcomponent
+
+            <div class="large-12 small-12 column body">
                 @yield('content')
             </div>
-
-            @component('sections.sidebar')
-            
-            @show
-            @endcomponent
 
         </div>
     </body>

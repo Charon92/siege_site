@@ -28,8 +28,9 @@ class HomeController extends Controller
     {
         $operators = DB::table( 'operator' )->get();
         $weapons = DB::table( 'weapon' )->get();
+        $posts = DB::table( 'posts' )->get();
 
-        return view( 'home', ['operators' => $operators, 'weapons' => $weapons] );
+        return view( 'home', ['operators' => $operators, 'weapons' => $weapons, 'posts' => $posts] );
     }
 
     public function view_operators()
@@ -64,6 +65,55 @@ class HomeController extends Controller
         $weapon = DB::table( 'weapon' )->where('id', $id)->get();
 
         return view( 'pages.weapon', ['weapon' => $weapon] );
+    }
+
+    /**
+     * 
+     */
+    public function posts()
+    {
+        $posts = DB::table( 'posts' )->get();
+
+        return view( 'pages.all-posts', ['posts' => $posts] );
+    }
+
+    /**
+     * 
+     */
+    public function createPost( Request $request )
+    {
+
+        $image = $request->file('image');
+        $imageName = $image->getClientOriginalName();
+        //checking if file exsists
+        if(file_exists(public_path("/images/posts/$imageName"))){ unlink(public_path("/images/posts/$imageName")); };
+        $image->move(public_path('/images/posts'), $imageName);
+
+        // create our operator data for the authentication
+        $postData = array(
+            'title' => Input::get('title'),
+            'content' => Input::get('content'),
+            'slug' => Input::get('slug'),
+            'image' => $imageName,
+            'type' => Input::get('type'),
+            'category_id' => Input::get('category_id'),
+            'author_id' => Input::get('author_id')
+        );
+
+        DB::table('posts')->insert([
+            [
+                'title' => $postData['title'],
+                'content' => $postData['content'],
+                'slug' => $postData['slug'],
+                'image' => $postData['image'],
+                'type' => $postData['type'],
+                'category_ID' => $postData['category_id'],
+                'author_ID' => $postData['author_id'],
+            ]
+        ]);
+
+        // return Redirect::to('/tartarus/admin/operators');
+        return back();
     }
 
     /**
@@ -165,9 +215,6 @@ class HomeController extends Controller
         // Check if an image with the same name exists (it shouldn't but hey, who knows right?)
         // If it does, delete it
         // Upload images to correct directorys
-
-        ini_set('max_file_size','6M');
-        ini_set('memory_limit','256M');
       
         $fullimage = $request->file('fullimage');
         $fullimageName = $fullimage->getClientOriginalName();
@@ -255,9 +302,6 @@ class HomeController extends Controller
 
     public function addWeapons( Request $request ) 
     {
-
-        ini_set('max_file_size','6m');
-        ini_set('memory_limit','256M');
 
         // Upload images to correct directorys
         $image = $request->file('image');

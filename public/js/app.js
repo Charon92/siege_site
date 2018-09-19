@@ -60,43 +60,11 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(1);
-module.exports = __webpack_require__(3);
-
-
-/***/ }),
-/* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
-
-
-function toggleForm() {
-    var toggle = document.getElementById('toggle-form');
-    var form = document.getElementById('form');
-
-    console.log(toggle);
-    console.log(form);
-
-    toggle.addEventListener("click", function () {
-        form.classList.toggle('show');
-    });
-};
-
-toggleForm();
-
-/***/ }),
-/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -10465,6 +10433,47 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(2);
+module.exports = __webpack_require__(3);
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
+
+
+
+var menu_toggle = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('#menu-toggle'),
+    menu = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('#toggle-nav');
+
+menu_toggle.click(function () {
+    console.log('clicking!!');
+    menu.toggleClass('left');
+});
+
+function toggleForm() {
+    var toggle = document.getElementById('toggle-form');
+    var form = document.getElementById('form');
+
+    console.log(toggle);
+    console.log(form);
+
+    toggle.addEventListener("click", function () {
+        form.classList.toggle('show');
+    });
+};
+
+toggleForm();
 
 /***/ }),
 /* 3 */
