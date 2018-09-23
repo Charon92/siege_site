@@ -15,9 +15,6 @@
 
     </head>
     <body>
-        <video autoplay muted loop id="myVideo">
-            <source src="{{ asset('images/r6-siege-bg_1280.mp4') }}" type="video/mp4">
-        </video>
         <div class="row grid-x main">
 
                 @component('sections.sidebar')
@@ -25,11 +22,12 @@
                 @show
                 @endcomponent
 
-            <div class="large-12 small-12 column body">
+            <section class="large-12 small-12 column body">
                 @yield('content')
-            </div>
+            </section>
 
         </div>
+        <canvas id="canvas"></canvas>
     </body>
     <script src="{{ asset('js/app.js') }}"></script>
 

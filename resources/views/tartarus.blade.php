@@ -11,23 +11,32 @@
         {{ Form::open(array('class' => 'grid-x column show styled', 'url' => 'login')) }}
         {{ Form::token() }}
 
+        <div class="large-6 grid-x flex-column">
+
+        <p class="large-6">
+            {{ Form::label('email', 'Email Address') }}
+            {{ Form::text('email') }}
+        </p>
+
+        <p class="large-6">
+            {{ Form::label('password', 'Password') }}
+            {{ Form::password('password') }}
+        </p>
+
+        </div>
+
+        <div class="large-6 grid-x flex-column border-left-white">
+
         <!-- if there are login errors, show them here -->
         <p class="large-12">
             {{ $errors->first('email') }}
             {{ $errors->first('password') }}
         </p>
 
-        <p class="large-12">
-            {{ Form::label('email', 'Email Address') }}
-            {{ Form::text('email') }}
-        </p>
+        <p class="large-6 center">{{ Form::submit('Login') }}</p>
 
-        <p class="large-12">
-            {{ Form::label('password', 'Password') }}
-            {{ Form::password('password') }}
-        </p>
+        </div>
 
-        <p class="large-12">{{ Form::submit('Login') }}</p>
         {{ Form::close() }}
     </div>
 </div>

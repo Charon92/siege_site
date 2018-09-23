@@ -1,5 +1,6 @@
 @php
     $operatorPageRoute = 'viewOperator';
+    $operatorLoadoutRoute = 'viewOperatorLoadout';
     $weaponPageRoute = 'viewWeapon';
     $postPageRoute = 'viewPost';    
 @endphp

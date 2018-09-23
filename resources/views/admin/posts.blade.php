@@ -1,5 +1,11 @@
 @php
     $postPageRoute = 'editPost';
+
+    $categoryArray = [];
+
+    foreach( $categories as $category) {
+        $categoryArray[$category->id] -> $category->name
+    }
 @endphp
 
 @extends('layouts.base')
@@ -55,7 +61,7 @@
 
     <p class="large-3 small-12">
         {{ Form::label('category_id', 'Post Category') }}
-        {{ Form::text('category_id') }}
+        {{ Form::select('category_id', $categoryArray, null, ['placeholder' => 'Pick a category...']) }}
     </p>
 
     <p class="large-3 small-12">

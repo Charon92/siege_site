@@ -12,6 +12,15 @@ form.styled {
         display: none;
     }
 
+    div.flex-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: $global-padding;
+        margin: 5rem 0;
+    }
+
 
     label {
         color: $main-color;

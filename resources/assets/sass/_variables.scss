@@ -29,9 +29,15 @@ $success: #8ed378;
 $alert: #f9f871;
 $error: #b80c09;
 
-$main-bg-color: #101b24;
+$main-bg-color: rgba(255,255,255,0.15);
 $second-bg-color: rgba(16, 26, 36, 0.75);
 $third-bg-color: rgba(255, 255, 255, 0.1);
 
 $header_stack: "Open Sans Condensed", sans-serif;
 $body_stack: "Open Sans", sans-serif;
+
+$global-margin: 1rem;
+$global-padding: 1rem;
+$global-font-size: 16px;
+$box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+$hover-box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);

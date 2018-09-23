@@ -2,11 +2,11 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
-// Settings
-@import 'settings';
-
 // Variables
 @import 'variables';
+
+// Settings
+@import 'settings';
 
 // Mixins
 @import 'mixins';
@@ -79,6 +79,16 @@ body {
   font-size: 16px;
   color: #FFF;
   overflow-x: hidden;
+  position: relative;
+}
+
+#canvas {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(60deg, #030e14 0%, #061b25 30%, #030e14 60%, #000203 100%);
+  top: 0;
+  left: 0;
 }
 
 .container {
@@ -86,12 +96,17 @@ body {
   position: relative;
 }
 
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
 .header.row {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: $main-bg-color;
+  background-color: $second-bg-color;
   padding: $global-padding;
   position: relative;
   cursor: pointer;

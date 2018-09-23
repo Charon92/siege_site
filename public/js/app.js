@@ -60,11 +60,49 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(1);
+module.exports = __webpack_require__(4);
+
+
+/***/ }),
+/* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
+
+
+__webpack_require__(3);
+
+var menuToggle = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('#menu-toggle');
+var menu = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('#toggle-nav');
+
+menuToggle.click(function () {
+  menu.toggleClass('top');
+});
+
+function toggleForm() {
+  var toggle = document.getElementById('toggle-form');
+  var form = document.getElementById('form');
+
+  toggle.addEventListener('click', function () {
+    form.classList.toggle('show');
+  });
+}
+
+toggleForm();
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -10435,48 +10473,57 @@ return jQuery;
 
 
 /***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(2);
-module.exports = __webpack_require__(3);
-
-
-/***/ }),
-/* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
-
-
-
-var menu_toggle = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('#menu-toggle'),
-    menu = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('#toggle-nav');
-
-menu_toggle.click(function () {
-    console.log('clicking!!');
-    menu.toggleClass('left');
-});
-
-function toggleForm() {
-    var toggle = document.getElementById('toggle-form');
-    var form = document.getElementById('form');
-
-    console.log(toggle);
-    console.log(form);
-
-    toggle.addEventListener("click", function () {
-        form.classList.toggle('show');
-    });
-};
-
-toggleForm();
-
-/***/ }),
 /* 3 */
+/***/ (function(module, exports) {
+
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+var dpi = window.devicePixelRatio;
+
+// get CSS height
+// the + prefix casts it to an integer
+// the slice method gets rid of "px"
+var styleHeight = +getComputedStyle(canvas).getPropertyValue('height').slice(0, -2);
+
+// get CSS width
+var styleWidth = +getComputedStyle(canvas).getPropertyValue('width').slice(0, -2);
+
+function fixDpi() {
+  // scale the canvas
+
+  canvas.setAttribute('height', styleHeight * dpi);
+  canvas.setAttribute('width', styleWidth * dpi);
+}
+
+function createCircles() {
+  for (var i = 1; i < 50; i++) {
+    var y = Math.random(10);
+    var radius = i * y;
+    var yPos = styleHeight / 2;
+    if (yPos % 2 === 0) {
+      yPos = -(styleHeight / 2);
+    }
+
+    ctx.arc(50, yPos, radius / 2, 0, 2 * Math.PI);
+  }
+}
+
+function draw() {
+  // call the dpi fix every time 
+  // canvas is redrawn
+  fixDpi();
+
+  // draw stuff!
+  ctx.beginPath();
+  createCircles();
+  ctx.fillStyle = 'rgba(0,255,127, 0.8)';
+  ctx.fill();
+}
+
+draw();
+
+/***/ }),
+/* 4 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

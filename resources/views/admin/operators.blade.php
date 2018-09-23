@@ -1,9 +1,10 @@
 @php
     $operatorPageRoute = 'editOperator';
+    $operatorLoadoutRoute = 'viewOperatorLoadout';
 
     $weaponArray = [];
 
-    foreach ( $weapons as $weapon ){
+    foreach ( $weapons as $weapon ) {
         $weaponArray[$weapon->id] = $weapon->name;
     }
 @endphp

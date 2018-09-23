@@ -1,16 +1,15 @@
 <div class="title-bar large-12" data-responsive-toggle="toggle-nav">
     <a href="{{ route('home') }}"><img class="logo" src="{{ asset('images/header_logo.png') }}" alt="Rainbox Six Siege logo"/></a>
-    <button id="menu-toggle" class="menu-icon" data-toggle="toggle-nav"></button>
+    <button id="menu-toggle" class="menu" data-toggle="toggle-nav"><i class="fi-align-right"></i></button>
 </div>
 
-<div id="toggle-nav" class="grid-x large-2 sidebar-container right">
+<section id="toggle-nav" class="grid-x large-12 sidebar-container top">
 
     <div class="nav column sidebar">
         <div class="fixed">
-            <a href="{{ route('home') }}"><img class="logo" src="{{ asset('images/header_logo.png') }}" alt="Rainbox Six Siege logo"/></a>
-            <div class="menu-container">
+            <div class="menu-container grid-x flex-row">
                 @if (Auth::check())
-                <ul class="vertical menu">
+                <ul class="vertical menu large-12">
 
                     <li class="{{ Route::currentRouteName() == 'admin' ? 'active' : '' }}">
                         <a href="{{ route( 'admin' ) }}">Admin</a>
@@ -23,9 +22,6 @@
                     <li class="{{ Route::currentRouteName() == 'weapons' ? 'active' : '' }}">
                         <a href="{{ route( 'weapons' ) }}">Weapons</a>
                     </li>
-
-                </ul>
-                <ul class="vertical menu">
                     <!-- Authentication Links -->
                     <li>
                         <a href="#" role="button" >
@@ -65,4 +61,4 @@
         </div>
     </div>
 
-</div>
+</section>

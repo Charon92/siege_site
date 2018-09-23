@@ -74,7 +74,7 @@ class HomeController extends Controller
     {
         $posts = DB::table( 'posts' )->get();
 
-        return view( 'pages.all-posts', ['posts' => $posts] );
+        return view( 'admin.posts', ['posts' => $posts] );
     }
 
     /**
@@ -352,7 +352,74 @@ class HomeController extends Controller
             'first-grip'  => $weaponData['first_grip'],
             'second-grip'  => $weaponData['second_grip'],
             'underbarrel'  => $weaponData['underbarrel'],
-                ]
+            ]
         ]);
+    }
+
+    /**
+     * 
+     */
+    public function editWeapon(Request $request, $id ) 
+    {
+        $weapon = DB::table( 'weapon' )->where('id', $id)->get();
+
+        if ($request->isMethod('post')) {
+
+            // Upload images to correct directorys
+            $image = $request->file('image');
+            $imageName = $image->getClientOriginalName();
+            //checking if file exsists
+            if(file_exists(public_path("/images/operators/weapons/$imageName"))){ unlink(public_path("/images/operators/weapons/$imageName")); };
+            $image->move(public_path('/images/operators/weapons'), $imageName);
+
+            $weaponData = array(
+                'name'     => Input::get('name'),
+                'image'  => $imageName,
+                'description'  => Input::get('description'),
+                'damage'  => Input::get('damage'),
+                'magazine'  => Input::get('magazine'),
+                'rateOfFire'  => Input::get('rate-of-fire'),
+                'mobility'  => Input::get('mobility'),
+                'first_sight'  => Input::get('first-sight'),
+                'second_sight'  => Input::get('second-sight'),
+                'third_sight'  => Input::get('third-sight'),
+                'fourth_sight'  => Input::get('fourth-sight'),
+                'first_barrel'  => Input::get('first-barrel'),
+                'second_barrel'  => Input::get('second-barrel'),
+                'third_barrel'  => Input::get('third-barrel'),
+                'fourth_barrel'  => Input::get('fourth-barrel'),
+                'first_grip'  => Input::get('first-grip'),
+                'second_grip'  => Input::get('second-grip'),
+                'underbarrel'  => Input::get('underbarrel'),
+            );
+
+            DB::table('weapon')
+            ->where('id', $id)
+            ->update([
+                [
+                'name'     => $weaponData['name'],
+                'image'  => $weaponData['image'],
+                'description'  => $weaponData['description'],
+                'damage'  => $weaponData['damage'],
+                'magazine'  => $weaponData['magazine'],
+                'rateOfFire'  => $weaponData['rateOfFire'],
+                'mobility'  => $weaponData['mobility'],
+                'first-sight'  => $weaponData['first_sight'],
+                'second-sight'  => $weaponData['second_sight'],
+                'third-sight'  => $weaponData['third_sight'],
+                'fourth-sight'  => $weaponData['fourth_sight'],
+                'first-barrel'  => $weaponData['first_barrel'],
+                'second-barrel'  => $weaponData['second_barrel'],
+                'third-barrel'  => $weaponData['third_barrel'],
+                'fourth-barrel'  => $weaponData['fourth_barrel'],
+                'first-grip'  => $weaponData['first_grip'],
+                'second-grip'  => $weaponData['second_grip'],
+                'underbarrel'  => $weaponData['underbarrel'],
+                ]
+            ]);
+        }
+
+        return view( 'admin.editWeapon', ['weapon' => $weapon] );
+
     }
 }

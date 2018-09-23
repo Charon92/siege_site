@@ -2,7 +2,7 @@ button,
 .button,
 .primary-button,
 input[type=submit] {
-    @include button-bg-color($blue, $main-bg-color, $main-color);
+    @include button-bg-color($blue, $second-bg-color, $main-color);
 
     padding: $global-padding;
     font-size: 150%;

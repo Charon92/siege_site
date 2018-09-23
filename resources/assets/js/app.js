@@ -1,24 +1,21 @@
-import 'jquery'
-import $ from 'jquery'
+import $ from 'jquery';
 
-let menu_toggle = $('#menu-toggle'),
-    menu = $('#toggle-nav');
+require('./components/canvas.js');
 
-menu_toggle.click( function() {
-    console.log('clicking!!');
-    menu.toggleClass('left');
-})
+const menuToggle = $('#menu-toggle');
+const menu = $('#toggle-nav');
+
+menuToggle.click( () => {
+  menu.toggleClass('top');
+});
 
 function toggleForm() {
-    let toggle = document.getElementById('toggle-form');
-    let form = document.getElementById('form');
+  const toggle = document.getElementById('toggle-form');
+  const form = document.getElementById('form');
 
-    console.log(toggle);
-    console.log(form);
-
-    toggle.addEventListener("click", function() {
-        form.classList.toggle('show');
-    })
-};
+  toggle.addEventListener('click', ( () => {
+    form.classList.toggle('show');
+  }));
+}
 
 toggleForm();
