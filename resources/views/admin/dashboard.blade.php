@@ -1,5 +1,6 @@
 @php
     $operatorPageRoute = 'editOperator';
+    $operatorLoadoutRoute = 'viewOperatorLoadout';
     $weaponPageRoute = 'editWeapon';
 @endphp
 
@@ -8,8 +9,7 @@
 @section('title', 'Rainbow Six Siege - Admin')
 
 @section('content')
-
-<div class="column container">
+<div class="column">
 
     <div class="header row">
         <h2 class="large-12">Operators</h2>

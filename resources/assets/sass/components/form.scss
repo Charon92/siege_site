@@ -80,4 +80,9 @@ form.styled {
         transition: all 250ms linear;
         z-index: 10;
     }
+
+    &.visible {
+        top: 0;
+        opacity: 1;
+    }
 }

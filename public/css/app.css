@@ -9115,8 +9115,6 @@ input[type=submit]:hover {
   position: relative;
   -webkit-box-shadow: inset 0px 0px 0px 2px transparent;
           box-shadow: inset 0px 0px 0px 2px transparent;
-  background-repeat: no-repeat;
-  background-size: cover;
   margin: 0 auto !important;
 }
 
@@ -9130,8 +9128,21 @@ input[type=submit]:hover {
   background: radial-gradient(ellipse at bottom, rgba(0, 0, 0, 0.65) 0%, transparent 70%);
 }
 
+.operator_container .operator_info {
+  position: relative;
+}
+
+.operator_container .operator_info .button-group {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 21;
+}
+
 .operator_container .header.row {
   background-color: rgba(255, 255, 255, 0.15);
+  cursor: default;
 }
 
 .operator_container p {
@@ -9157,159 +9168,6 @@ input[type=submit]:hover {
 .operator_container a i.fi-* {
   margin-left: 10%;
   font-size: 2rem !important;
-}
-
-.operator_header_image {
-  width: auto;
-  height: 750px;
-  background-position: center;
-  background-repeat: none;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-.op_info {
-  background-color: rgba(16, 26, 36, 0.75);
-  min-height: 300px;
-  margin-top: -100px;
-}
-
-.op_header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 90%;
-  margin: 1% 5%;
-}
-
-.op_body {
-  width: 90%;
-  margin: 1% 5%;
-}
-
-.op_body .dropdown {
-  border: 1px solid #e69c24;
-  margin: 2% auto;
-  background-color: rgba(255, 255, 255, 0.15);
-}
-
-.op_body .dropdown_header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 95%;
-  padding: 0 2.5%;
-  line-height: 20px;
-  background: #575f65;
-  background: -webkit-gradient(linear, left top, right top, from(#575f65), to(#101b24));
-  background: linear-gradient(to right, #575f65 0%, #101b24 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#575f65', endColorstr='#101b24',GradientType=1 );
-  cursor: pointer;
-}
-
-.op_body .dropdown_header h1 {
-  color: #e69c24;
-}
-
-.op_body .abilities {
-  min-height: 60px;
-}
-
-.op_body .abilities .info_holder {
-  width: 95%;
-  margin: auto 2.5%;
-}
-
-.op_body .abilities .ability {
-  width: 95%;
-  margin: auto 2.5%;
-}
-
-.op_body .weapons .weapons_holder > h2 {
-  margin: 2.5%;
-}
-
-.op_body .weapons .weapons {
-  width: 95%;
-  margin: 2.5%;
-}
-
-.op_body .weapons .weapons h2 {
-  margin: auto 2.5%;
-}
-
-.op_body .weapons .weapons ul li {
-  margin: 1% auto;
-}
-
-.op_body .weapons .weapon_info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-.op_body .weapons .weapon_info h6 {
-  margin: 10px auto;
-}
-
-/* container backgrounds */
-
-.korea {
-  background-image: url("/images/operators/bg/korea.jpg");
-}
-
-.poland {
-  background-image: url("/images/operators/bg/poland.jpg");
-}
-
-.hongkong {
-  background-image: url("/images/operators/bg/hongkong.jpg");
-}
-
-.spain {
-  background-image: url("/images/operators/bg/spain.jpg");
-}
-
-.japan {
-  background-image: url("/images/operators/bg/japan.jpg");
-}
-
-.brazil {
-  background-image: url("/images/operators/bg/brazil.jpg");
-}
-
-.seals {
-  background-image: url("/images/operators/bg/seals.jpg");
-}
-
-.canada {
-  background-image: url("/images/operators/bg/canada.jpg");
-}
-
-.british {
-  background-image: url("/images/operators/bg/sas.jpg");
-}
-
-.swat {
-  background-image: url("/images/operators/bg/fbi.jpg");
-}
-
-.russian {
-  background-image: url("/images/operators/bg/russia.jpg");
-}
-
-.germany {
-  background-image: url("/images/operators/bg/gsg9.jpg");
 }
 
 form.styled {
@@ -9411,43 +9269,65 @@ form.styled.show {
   z-index: 10;
 }
 
+form.styled.visible {
+  top: 0;
+  opacity: 1;
+}
+
 .weapon_container {
   position: relative;
   -webkit-box-shadow: inset 0px 0px 0px 2px transparent;
           box-shadow: inset 0px 0px 0px 2px transparent;
-  max-height: 180px;
-  overflow: hidden;
+  margin: 0 auto !important;
 }
 
-.weapon_container .operator {
-  width: 150%;
-  min-width: 100%;
-  min-height: 100%;
-  height: auto;
-}
-
-.weapon_container a {
+.weapon_container:after {
+  content: '';
   position: absolute;
-  top: 0;
+  bottom: 0;
+  height: 80px;
+  width: 100%;
+  z-index: 20;
+  background: radial-gradient(ellipse at bottom, rgba(0, 0, 0, 0.65) 0%, transparent 70%);
+}
+
+.weapon_container .weapon_image img {
+  width: 50%;
+  margin: 3rem auto;
+  display: block;
+}
+
+.weapon_container .weapon_info {
+  position: relative;
+}
+
+.weapon_container .weapon_info .button-group {
+  position: absolute;
+  bottom: 0;
   left: 0;
   width: 100%;
-  min-height: 20%;
-  height: 40%;
-  background-color: rgba(16, 26, 36, 0.75);
-  padding: 1rem;
-  -webkit-transition: all 250ms linear;
-  transition: all 250ms linear;
+  z-index: 21;
 }
 
-.weapon_container:hover {
-  -webkit-box-shadow: inset 0px 0px 0px 2px #d1f5ff;
-          box-shadow: inset 0px 0px 0px 2px #d1f5ff;
+.weapon_container .weapon_info .button-group a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.weapon_container:hover a {
-  height: 90%;
-  -webkit-transition: all 250ms linear;
-  transition: all 250ms linear;
+.weapon_container .weapon_info .button-group a i.fi-* {
+  margin-left: 10%;
+  font-size: 2rem !important;
 }
 
 .image-container {
@@ -9549,6 +9429,13 @@ body {
     padding-right: 0.9375rem;
     padding-left: 0.9375rem;
   }
+}
+
+.body.grid-x.column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .flex-row {

@@ -6,7 +6,7 @@
     <img class="operator" src="{{ asset( 'images/operators/' . $operator->fullimage ) }}" />
 </div>
 
-<div class="large-6 small-12">
+<div class="large-6 small-12 operator_info">
     <div class="header row">
         <h4> {{ $operator->name }}</h4>
     </div>
@@ -20,7 +20,11 @@
         </a>
 
         <a class="button large-3" title="View Operator" href="{{ route($operatorPageRoute, $id = $operator->id ) }}">
-            <h4>Info</h4>
+                @if (Route::current()->getName() === 'admin')
+                    <h4>Edit</h4>
+                @else 
+                    <h4>Info</h4>
+                @endif
             <span><i class="fi-arrow-right"></i></span>
         </a>
 

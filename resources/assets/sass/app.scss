@@ -96,6 +96,11 @@ body {
   position: relative;
 }
 
+// To override the grid-x flex-flow
+.body.grid-x.column {
+  flex-direction: column;
+}
+
 .flex-row {
   display: flex;
   flex-direction: row;

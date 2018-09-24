@@ -17,6 +17,8 @@
 
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::get('/feedback', 'HomeController@feedback')->name('feedback');
+
 Route::get('/operators', 'HomeController@view_operators')->name('allOperators');
 Route::get('/operator/id={id}', 'HomeController@operator')->name('viewOperator');
 

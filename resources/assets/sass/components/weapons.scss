@@ -1,34 +1,47 @@
 .weapon_container {
     position: relative;
     box-shadow:inset 0px 0px 0px 2px transparent;
-    max-height: 180px;
-    overflow: hidden;
+    margin: 0 auto !important;
 
-    .operator {
-        width: 150%;
-        min-width: 100%;
-        min-height: 100%;
-        height: auto;
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        height: 80px;
+        width: 100%;
+        z-index: 20;
+        background: radial-gradient(ellipse at bottom, rgba(0,0,0,0.65) 0%, transparent 70%);
     }
 
-    a {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        min-height: 20%;
-        height: 40%;
-        background-color: $second-bg-color;
-        padding: $global-padding;
-        transition: all 250ms linear;
-      }
-    
-    &:hover {
-        box-shadow:inset 0px 0px 0px 2px $main-color;
+    .weapon_image {
+        img {
+            width: 50%;
+            margin: 3rem auto;
+            display: block;
+        }
+    }
 
-        a {
-            height: 90%;
-            transition: all 250ms linear;
+    .weapon_info {
+        position: relative;
+    
+        .button-group {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          z-index: 21;
+
+          a {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        
+            i.fi-* {
+              margin-left: 10%;
+              font-size: 2rem !important;
+            }
+          }
         }
     }
 }

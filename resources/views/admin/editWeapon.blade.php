@@ -16,15 +16,13 @@
 
 @section('content')
 
-<div class="column container">
-        <div id="toggle-form"  class="header row">
-        <h1>Edit {{ $weaponData['name'] }}</h1>
-            <i class="fi-plus"></i>
-        </div>
+<div class="center large-8 medium-10 small-12">
+    <div id="toggle-form"  class="header row">
+    <h1>Edit {{ $weaponData['name'] }}</h1>
+        <i class="fi-plus"></i>
+    </div>
 
-        @include('admin.forms.addWeaponForm')
-
+    @include('admin.forms.addWeaponForm')
 
 </div>
-
 @endsection

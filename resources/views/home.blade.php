@@ -12,7 +12,7 @@
 @section('content')
 <div class="column">
 
-    <div class="grid-x">
+    <div class="grid-x recent_operators">
         @include( 'sections.recentOperators' )
     </div>
 

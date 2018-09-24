@@ -3,7 +3,6 @@
 @section('title', 'Rainbow Six Siege - Login')
 
 @section('content')
-<div class="column grid-x">
     <div class="large-10 center">
         <div class="header row">
             <h1>Login</h1>
@@ -39,5 +38,4 @@
 
         {{ Form::close() }}
     </div>
-</div>
 @endsection

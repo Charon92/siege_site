@@ -22,7 +22,7 @@
                 @show
                 @endcomponent
 
-            <section class="large-12 small-12 column body">
+            <section class="large-12 small-12 column body grid-x">
                 @yield('content')
             </section>
 
