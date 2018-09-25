@@ -8902,11 +8902,12 @@ input[type=submit]:hover {
 
 .title-bar {
   max-height: 105px;
-  height: 105px;
+  min-height: 10vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  position: fixed;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -8916,6 +8917,11 @@ input[type=submit]:hover {
           justify-content: space-between;
   background: transparent;
   padding: 0;
+  z-index: 1002;
+}
+
+.title-bar > a {
+  margin: 1rem;
 }
 
 .title-bar button.menu {
@@ -9102,6 +9108,41 @@ input[type=submit]:hover {
   -moz-transition: all 250ms ease-in-out;
   -webkit-transition: all 250ms ease-in-out;
   -o-transition: all 250ms ease-in-out;
+}
+
+.recent_operators {
+  height: 80vh;
+  margin-top: 10vh;
+}
+
+.recent_operators .operator_container:nth-child(1) {
+  margin-left: 10%;
+  z-index: 3;
+}
+
+.recent_operators .operator_container::nth-child(2) {
+  margin-right: 10%;
+  z-index: 2;
+}
+
+.recent_operators img.post {
+  position: absolute;
+  bottom: 0;
+  -webkit-filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.65));
+          filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.65));
+}
+
+.current_bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url(/images/grim_sky_bg.jpg?fbecad669fe80d32670975b5178db9a8) no-repeat;
+  background-position: center;
+  background-size: 100%;
+  background-attachment: fixed;
+  z-index: 1;
 }
 
 .default_ctu {
@@ -9366,7 +9407,7 @@ video#myVideo {
 .main,
 nav {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 h1,
@@ -9466,6 +9507,7 @@ body {
   padding: 1rem;
   position: relative;
   cursor: pointer;
+  min-height: 10vh;
 }
 
 .header.row:after {
@@ -9503,8 +9545,9 @@ body {
 }
 
 .info {
-  padding: 1rem;
+  padding: 2rem;
   background-color: rgba(16, 26, 36, 0.75);
+  min-height: 100vh;
 }
 
 .border-top {

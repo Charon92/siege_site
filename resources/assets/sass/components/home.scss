@@ -68,3 +68,40 @@
         }
     }
 }
+
+.recent_operators {
+  height: 80vh;
+  margin-top: 10vh;
+
+  .operator_container{
+    
+    &:nth-child(1) {
+    margin-left: 10%;
+    z-index:3;
+    }
+
+    &::nth-child(2) {
+      margin-right: 10%;
+      z-index: 2;
+    }
+  }
+
+  img.post {
+    position: absolute;
+    bottom: 0;
+    filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.65));
+  }
+}
+
+.current_bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url(../../../../public/images/grim_sky_bg.jpg) no-repeat;
+  background-position: center;
+  background-size: 100%;
+  background-attachment: fixed;
+  z-index: 1;
+}

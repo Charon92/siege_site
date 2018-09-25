@@ -15,10 +15,6 @@
 @section('title', 'Rainbow Six Siege')
 
 @section('content')
-
-<div class="header row">
-    <h2 class="large-12">{{ $operatorName }}</h2>
-</div>
 <div class="grid-x">
     <div class="large-8 small-12 image-container">
         <img class="main-image" src="{{ $imagePath }}/{{ $operator->fullimage }}" alt="{{ $operatorName }}" />

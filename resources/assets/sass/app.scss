@@ -41,7 +41,7 @@ video#myVideo {
 .main,
 nav {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 h1,
@@ -115,6 +115,7 @@ body {
   padding: $global-padding;
   position: relative;
   cursor: pointer;
+  min-height: 10vh;
 
   &:after {
     background: url(/images/r6-row-shape.png) 50% 0 no-repeat;
@@ -143,8 +144,9 @@ body {
 }
 
 .info {
-  padding: $global-padding;
+  padding: $global-padding * 2;
   background-color: $second-bg-color;
+  min-height: 100vh;
 }
 
 .border-top {

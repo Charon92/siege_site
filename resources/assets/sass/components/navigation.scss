@@ -12,13 +12,19 @@
 
 .title-bar {
     max-height: 105px;
-    height: 105px;
+    min-height: 10vh;
     display: flex;
     width: 100%;
+    position: fixed;
     flex-direction: row;
     justify-content: space-between;
     background: transparent;
     padding: 0;
+    z-index: 1002;
+
+    & > a {
+        margin: $global-margin;
+    }
 
     button.menu {
         background: transparent;

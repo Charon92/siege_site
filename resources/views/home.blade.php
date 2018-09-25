@@ -32,3 +32,5 @@
 
 </div>
 @endsection
+
+<div class="current_bg"></div>
