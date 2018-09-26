@@ -43,9 +43,9 @@ class HomeController extends Controller
         if ($request->isMethod('post')) {
 
         $postData = array(
-            'name' => Input::get('name'),
-            'email' => Input::get('email'),
-            'suggestion' => Input::get('suggestion'),
+            'name'          => Input::get('name'),
+            'email'         => Input::get('email'),
+            'suggestion'    => Input::get('suggestion'),
         );
 
         $rules = array(
@@ -71,14 +71,14 @@ class HomeController extends Controller
 
             DB::table('suggestion')->insert([
                 [
-                    'name' => $userdata['name'],
-                    'email' => $userdata['email'],
-                    'suggestion' => $userdata['suggestion'],
+                    'name'          => $userdata['name'],
+                    'email'         => $userdata['email'],
+                    'suggestion'    => $userdata['suggestion'],
                 ]
             ]);
     
-            echo 'SUCCESS!';
-            return Redirect::to( 'home' );
+            $message = 'Thank you for your feedback!';
+            return Redirect::to( 'home', ['message' => $message]);
         }
     }
 
@@ -474,5 +474,12 @@ class HomeController extends Controller
 
         return view( 'admin.editWeapon', ['weapon' => $weapon, 'id' => $id] );
 
+    }
+
+    public function suggestions() {
+
+        $suggestions = DB::table( 'suggestion' )->get();
+
+        return view( 'admin.suggestions', ['suggestions' => $suggestions] );
     }
 }

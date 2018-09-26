@@ -106,9 +106,10 @@
 
                 &.active {
                     border-left-color: $main-color;
+                    background-color: $second-bg-color;
 
-                    > a {
-                        background-color: $second-bg-color;
+                    a {
+                        background: transparent;
                         color: $main-color;
                         font-weight: 500;
                     }

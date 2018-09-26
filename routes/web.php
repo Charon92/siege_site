@@ -18,11 +18,12 @@
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/feedback', 'HomeController@feedback')->name('feedback');
+Route::post('/feedback', 'HomeController@feedback');
 
 Route::get('/operators', 'HomeController@view_operators')->name('allOperators');
 Route::get('/operator/id={id}', 'HomeController@operator')->name('viewOperator');
 
-Route::get('/operator/id={id}/loadout', 'HomController@operatorLoadout')->name('viewOperatorLoadout');
+Route::get('/operator/id={id}/loadout', 'HomeController@operatorLoadout')->name('viewOperatorLoadout');
 
 Route::get('/weapons', 'HomeController@view_weapons')->name('allWeapons');
 Route::get('/weapon/id={id}', 'HomeController@weapon')->name('viewWeapon');
@@ -66,4 +67,7 @@ Route::prefix('taratarus')->group(function () {
 
     Route::get('/admin/post/edit/{id}', 'HomeController@editPost')->name('editPost');
     Route::post('/admin/post/edit/{id}', 'HomeController@editPost');
+
+    // View all suggestions
+    Route::get('/admin/suggestions', 'HomeController@suggestions')->name('viewSuggestions');
 });

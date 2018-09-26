@@ -22,6 +22,9 @@
                     <li class="{{ Route::currentRouteName() == 'weapons' ? 'active' : '' }}">
                         <a href="{{ route( 'weapons' ) }}">Weapons</a>
                     </li>
+                    <li class="{{ Route::currentRouteName() == 'viewSuggestions' ? 'active' : '' }}">
+                            <a href="{{ route( 'viewSuggestions' ) }}">Suggestions</a>
+                        </li>
                     <!-- Authentication Links -->
                     <li>
                         <a href="#" role="button" >
