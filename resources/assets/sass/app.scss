@@ -99,6 +99,10 @@ body {
 // To override the grid-x flex-flow
 .body.grid-x.column {
   flex-direction: column;
+
+  .center {
+    margin-top: 10vh;
+  }
 }
 
 .flex-row {

@@ -9026,10 +9026,11 @@ input[type=submit]:hover {
 
 .nav .fixed ul li.active {
   border-left-color: #d1f5ff;
+  background-color: rgba(16, 26, 36, 0.75);
 }
 
-.nav .fixed ul li.active > a {
-  background-color: rgba(16, 26, 36, 0.75);
+.nav .fixed ul li.active a {
+  background: transparent;
   color: #d1f5ff;
   font-weight: 500;
 }
@@ -9138,10 +9139,6 @@ input[type=submit]:hover {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: url(/images/grim_sky_bg.jpg?fbecad669fe80d32670975b5178db9a8) no-repeat;
-  background-position: center;
-  background-size: 100%;
-  background-attachment: fixed;
   z-index: 1;
 }
 
@@ -9477,6 +9474,10 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.body.grid-x.column .center {
+  margin-top: 10vh;
 }
 
 .flex-row {

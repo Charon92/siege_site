@@ -40,50 +40,55 @@ class HomeController extends Controller
      */
     public function feedback(Request $request) {
 
-        if ($request->isMethod('post')) {
-
-        $postData = array(
-            'name'          => Input::get('name'),
-            'email'         => Input::get('email'),
-            'suggestion'    => Input::get('suggestion'),
-        );
-
-        $rules = array(
-            'email'    => 'required|email', // make sure the email is an actual email
-        );
-    
-        // run the validation rules on the inputs from the form
-        $validator = Validator::make( $postData, $rules );
-    
-        // if the validator fails, redirect back to the form
-        if ($validator->fails()) {
-            return Redirect::to( 'feedback' )
-                ->withErrors( $validator ) // send back all errors to the login form
-                ->withInput( ); // send back the input (not the password) so that we can repopulate the form
-        } else {
-    
-            // create our user data for the authentication
-            $userdata = array(
-                'name'          => Input::get( 'name' ),
-                'email'         => Input::get( 'email' ),
-                'suggestion'    => Input::get( 'password' )
-            );
-
-            DB::table('suggestion')->insert([
-                [
-                    'name'          => $userdata['name'],
-                    'email'         => $userdata['email'],
-                    'suggestion'    => $userdata['suggestion'],
-                ]
-            ]);
-    
-            $message = 'Thank you for your feedback!';
-            return Redirect::to( 'home', ['message' => $message]);
-        }
-    }
-
         return view( 'pages.contact' );
 
+    }
+
+    /**
+     * @param request
+     */
+    public function postFeedback(Request $request) {
+        if ($request->isMethod('post')) {
+
+            $postData = array(
+                'name'          => Input::get('name'),
+                'email'         => Input::get('email'),
+                'suggestion'    => Input::get('suggestion'),
+            );
+    
+            $rules = array(
+                'email'    => 'required|email', // make sure the email is an actual email
+            );
+        
+            // run the validation rules on the inputs from the form
+            $validator = Validator::make( $postData, $rules );
+        
+            // if the validator fails, redirect back to the form
+            if ($validator->fails()) {
+                return Redirect::to( 'feedback' )
+                    ->withErrors( $validator ) // send back all errors to the login form
+                    ->withInput( ); // send back the input (not the password) so that we can repopulate the form
+            } else {
+        
+                // create our user data for the authentication
+                $userdata = array(
+                    'name'          => Input::get( 'name' ),
+                    'email'         => Input::get( 'email' ),
+                    'suggestion'    => Input::get( 'password' )
+                );
+    
+                DB::table('suggestion')->insert([
+                    [
+                        'name'          => $userdata['name'],
+                        'email'         => $userdata['email'],
+                        'suggestion'    => $userdata['suggestion'],
+                    ]
+                ]);
+        
+                $message = 'Thank you for your feedback!';
+                return Redirect::to( 'home', ['message' => $message]);
+            }
+        }
     }
 
     public function view_operators()
