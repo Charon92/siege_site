@@ -60,49 +60,11 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(1);
-module.exports = __webpack_require__(4);
-
-
-/***/ }),
-/* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
-
-
-__webpack_require__(3);
-
-var menuToggle = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('#menu-toggle');
-var menu = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('#toggle-nav');
-
-menuToggle.click(function () {
-  menu.toggleClass('top');
-});
-
-function toggleForm() {
-  var toggle = document.getElementById('toggle-form');
-  var form = document.getElementById('form');
-
-  toggle.addEventListener('click', function () {
-    form.classList.toggle('show');
-  });
-}
-
-toggleForm();
-
-/***/ }),
-/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -10473,6 +10435,73 @@ return jQuery;
 
 
 /***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(2);
+module.exports = __webpack_require__(5);
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
+
+
+__webpack_require__(3);
+__webpack_require__(4);
+
+var menuToggle = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('#menu-toggle');
+var menu = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('#toggle-nav');
+
+menuToggle.click(function () {
+  menu.toggleClass('top');
+});
+
+function toggleForm() {
+  var toggle = document.getElementById('toggle-form');
+  var form = document.getElementById('form');
+
+  toggle.addEventListener('click', function () {
+    form.classList.toggle('show');
+  });
+}
+
+__WEBPACK_IMPORTED_MODULE_0_jquery___default()(function () {
+  var $nav = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.title-bar');
+  var $icon = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.title-bar a .logo');
+  var $menuIcon = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('#menu-toggle');
+  var scrollFromTop = 0;
+
+  __WEBPACK_IMPORTED_MODULE_0_jquery___default()(window).scroll(function () {
+    scrollFromTop = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(window).scrollTop();
+    if (scrollFromTop >= 50) {
+      $nav.addClass('scrolled');
+      $icon.addClass('scrolled');
+      $menuIcon.addClass('scrolled');
+    } else {
+      $nav.removeClass('scrolled');
+      $icon.removeClass('scrolled');
+      $menuIcon.removeClass('scrolled');
+    }
+  });
+});
+
+__WEBPACK_IMPORTED_MODULE_0_jquery___default()(function () {
+  var $scroll = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.to_top');
+
+  $scroll.click(function () {
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default()('html, body').animate({ scrollTop: 0 }, 'slow');
+  });
+});
+
+toggleForm();
+
+/***/ }),
 /* 3 */
 /***/ (function(module, exports) {
 
@@ -10524,6 +10553,25 @@ draw();
 
 /***/ }),
 /* 4 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
+
+
+__WEBPACK_IMPORTED_MODULE_0_jquery___default()(function () {
+  var $slideshow = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('[data-slideshow]');
+  var $slides = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('[data-slide]');
+
+  __WEBPACK_IMPORTED_MODULE_0_jquery___default.a.each($slides, function (index, element) {
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default()(element).css('width', $slideshow.width());
+  });
+});
+
+/***/ }),
+/* 5 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

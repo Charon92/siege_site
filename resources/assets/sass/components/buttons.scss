@@ -9,6 +9,7 @@ input[type=submit] {
     font-weight: bold;
     font-family: $header-stack;
     border: none;
+    z-index: 10;
 }
 
 .upload-button {

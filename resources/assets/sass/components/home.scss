@@ -69,8 +69,12 @@
     }
 }
 
+.gutter {
+  width: 100%;
+}
+
 .recent_operators {
-  height: 80vh;
+  height: 90vh;
   margin-top: 10vh;
 
   .operator_container{
@@ -90,6 +94,34 @@
     position: absolute;
     bottom: 0;
     filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.65));
+  }
+}
+
+.all_operators,
+.all_weapons {
+  max-height: 90vh;
+  height: 100%;
+  overflow: hidden;
+}
+
+.all_operators {
+  .rail {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: visible;
+    height: 100%;
+
+    .operator_container {
+      height: 100%;
+      min-height: 100%;
+      width: 80vh;
+      display: inline-flex;
+
+      img.operator {
+          position: absolute;
+          bottom: 0;
+      }
+    }
   }
 }
 

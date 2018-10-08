@@ -86,14 +86,18 @@ body {
   position: fixed;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(60deg, #030e14 0%, #061b25 30%, #030e14 60%, #000203 100%);
   top: 0;
   left: 0;
+  @include grad-main;
 }
 
 .container {
   @include xy-grid-container;
   position: relative;
+}
+
+.scrolled {
+  transition: all 250ms ease-in-out;
 }
 
 // To override the grid-x flex-flow

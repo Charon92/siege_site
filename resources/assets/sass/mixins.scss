@@ -13,7 +13,7 @@
     }
 }
 
-@mixin grad_body {
+@mixin grad-body {
     background: #575f65;
     background: -moz-linear-gradient(left, #575f65 0%, #101b24 100%);
     background: -webkit-linear-gradient(left, #575f65 0%, #101b24 100%);
@@ -24,4 +24,8 @@
 @function calculate-rem($size) {
   $remSize: $size / 16px;
   @return #{$remSize};
+}
+
+@mixin grad-main {
+  background: linear-gradient(60deg, #030e14 0%, #061b25 30%, #030e14 60%, #000203 100%);
 }

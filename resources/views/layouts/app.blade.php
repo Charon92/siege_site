@@ -75,5 +75,8 @@
             @yield('content')
         </main>
     </div>
+    <div class="fixed to_top"><i class="fi-arrow-up"></i></div>
+
+    <div class="current_bg"></div>
 </body>
 </html>

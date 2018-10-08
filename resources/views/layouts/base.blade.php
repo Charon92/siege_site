@@ -17,16 +17,31 @@
     <body>
         <div class="row grid-x main">
 
-                @component('sections.sidebar')
+            @component('sections.sidebar')
+        
+            @show
+            @endcomponent
             
+            <aside class="large-1 small-12 column grid-x">
+                @component('sections.leftSidebar')
+    
                 @show
                 @endcomponent
+            </aside>
 
-            <section class="large-12 small-12 column body grid-x">
+            <section class="large-10 small-10 column body grid-x">
                 @yield('content')
             </section>
 
+            <aside class="large-1 small-12 column grid-x">
+                @component('sections.rightSidebar')
+    
+                @show
+                @endcomponent
+            </aside>
+
         </div>
+
         <canvas id="canvas"></canvas>
     </body>
     <script src="{{ asset('js/app.js') }}"></script>

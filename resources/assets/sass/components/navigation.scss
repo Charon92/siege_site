@@ -18,9 +18,15 @@
     position: fixed;
     flex-direction: row;
     justify-content: space-between;
-    background: transparent;
     padding: 0;
     z-index: 1002;
+    transition: all 250ms ease-in-out;
+    @include grad-main;
+
+    &.scrolled {
+        min-height: 5vh;
+        height: 50px;
+    }
 
     & > a {
         margin: $global-margin;
@@ -36,6 +42,11 @@
         font-size: 3rem;
         color: $white;
         z-index: 1001;
+        transition: all 250ms ease-in-out;
+
+        &.scrolled {
+            font-size: 1.5rem;
+        }
         
         i {
             margin: 0 auto;
@@ -114,6 +125,45 @@
                         font-weight: 500;
                     }
                 }
+            }
+        }
+    }
+}
+
+aside {
+    .sidebar {
+        position: fixed;
+        z-index: 100;
+        left: 0;
+        bottom: 0;
+
+        .rail {
+            position: relative;
+            max-height: 100vh;
+            width: 100%;
+
+            .bar {
+                padding: $global-padding;
+                writing-mode: vertical-lr;
+                text-orientation: mixed;
+
+                &.bar_weapon {
+                    background-color: $active-color;
+                }
+
+                &.bar_operator {
+                    background-color: $second-bg-color;
+                }
+            }
+
+            .to_top {
+                position: fixed;
+                right: 0;
+                bottom: 0;
+                margin: 0 auto;
+                padding: $global-padding $global-padding * 2;
+                font-size: 3rem;
+                z-index: 1000;
             }
         }
     }
