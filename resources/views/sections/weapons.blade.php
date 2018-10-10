@@ -1,5 +1,6 @@
 @foreach ($weapons as $weapon)
-<div class="weapon_container large-8 grid-x medium-10 small-12 border-top">
+<div class="weapon_container large-12 grid-x medium-12 small-12 border-top" data-slide>
+    
     <div class="large-6 small-12 weapon_image">
         <img class="operator" src="{{ asset( 'images/operators/weapons/' . $weapon->image ) }}" />
     </div>

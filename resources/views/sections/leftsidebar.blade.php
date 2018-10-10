@@ -1,4 +1,4 @@
-<div class="large-12 small-12 flex_column sidebar">
+<div class="large-1 small-12 flex_column sidebar">
   <div class="rail">
 
     <div class="large-12 bar bar_operator">

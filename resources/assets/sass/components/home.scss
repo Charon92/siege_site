@@ -99,27 +99,31 @@
 
 .all_operators,
 .all_weapons {
-  max-height: 90vh;
-  height: 100%;
+  max-height: 97.5vh;
+  height: 100vh;
   overflow: hidden;
+  position: relative;
 }
 
-.all_operators {
-  .rail {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    overflow-x: visible;
+.rail {
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: visible;
+  height: 100%;
+  position: absolute;
+
+  .operator_container,
+  .weapon_container {
     height: 100%;
+    min-height: 100%;
+    width: 80vh;
+    display: inline-flex;
 
-    .operator_container {
-      height: 100%;
-      min-height: 100%;
-      width: 80vh;
-      display: inline-flex;
-
-      img.operator {
-          position: absolute;
-          bottom: 0;
+    img{
+      &.operator,
+      .weapon {
+        position: absolute;
+        bottom: 0;
       }
     }
   }

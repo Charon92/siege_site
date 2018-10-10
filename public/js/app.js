@@ -10499,6 +10499,12 @@ __WEBPACK_IMPORTED_MODULE_0_jquery___default()(function () {
   });
 });
 
+// const pageHeight = window.innerHeight;
+
+// window.addEventListener('scroll', ( () => {
+//   $('html, body').animate( { scrollTop: pageHeight }, 'slow' );
+// }));
+
 toggleForm();
 
 /***/ }),

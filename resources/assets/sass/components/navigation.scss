@@ -1,12 +1,12 @@
 .sidebar-container {
     position: fixed ;
     top: 0;
-    transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: top 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
     z-index: 1000;
 
     &.top {
         top: -3000px;
-        transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+        transition: top 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
     }
 }
 
@@ -146,6 +146,7 @@ aside {
                 padding: $global-padding;
                 writing-mode: vertical-lr;
                 text-orientation: mixed;
+                cursor: pointer;
 
                 &.bar_weapon {
                     background-color: $active-color;
