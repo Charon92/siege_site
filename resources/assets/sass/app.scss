@@ -103,9 +103,12 @@ body {
 // To override the grid-x flex-flow
 .body.grid-x.column {
   flex-direction: column;
+  margin-top: 10vh;
+  height: 90vh;
 
   .center {
-    margin-top: 10vh;
+    margin: auto;
+    position: relative;
   }
 }
 
@@ -126,7 +129,7 @@ body {
   min-height: 10vh;
 
   &:after {
-    background: url(/images/r6-row-shape.png) 50% 0 no-repeat;
+    background: url('../images/r6-row-shape.png') 50% 0 no-repeat;
     content: "";
     display: block;
     position: absolute;

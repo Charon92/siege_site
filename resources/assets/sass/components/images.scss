@@ -18,6 +18,7 @@
 
 img {
     &.logo {
+        max-width: 50%;
         transition: all 250ms ease-in-out;
 
         &.scrolled {

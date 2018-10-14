@@ -16,16 +16,12 @@
         @include( 'sections.recentOperators' )
     </div>
 
-    <div id="section-1" class="all_operators large-12 section" data-slideshow>
-        <div class="grid-x rail">
+    <div id="section-1" class="all_operators large-12 section" data-slideshow data-operators>
             @include('sections.operators')
-        </div>
     </div>
 
-    <div id="section-2" class="all_weapons large-12 section" data-slideshow>
-        <div class="grid-x rail">
+    <div id="section-2" class="all_weapons large-12 section" data-slideshow data-weapons>
             @include('sections.weapons')
-        </div>
     </div>
 
 </div>

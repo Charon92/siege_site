@@ -2,6 +2,7 @@ import $ from 'jquery';
 
 require( './components/canvas.js');
 require( './components/carousel.js' );
+require( '../../../node_modules/slick-carousel/slick/slick.js');
 
 const menuToggle = $('#menu-toggle');
 const menu = $('#toggle-nav');
@@ -47,10 +48,11 @@ $( () => {
   });
 });
 
-// const pageHeight = window.innerHeight;
-
-// window.addEventListener('scroll', ( () => {
-//   $('html, body').animate( { scrollTop: pageHeight }, 'slow' );
-// }));
+$( '.all_operators' ).slick({
+  infinite: false,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: true,
+});
 
 toggleForm();
