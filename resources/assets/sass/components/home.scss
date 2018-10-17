@@ -102,6 +102,33 @@
   height: 100vh;
   overflow: hidden;
   position: relative;
+
+  .slick-list {
+    height: 100%;
+    position: relative;
+
+    .slick-track {
+      height: 100%;
+
+      .slick-slide {
+        height: 100%;
+        display: inline-flex;
+      }
+    }
+  }
+
+  .slick-arrow {
+    position: absolute;
+    height: 100%;
+
+    &.slick-prev {
+      left: 0;
+    }
+
+    &.slick-next {
+      right: 0;
+    }
+  }
 }
 
 .operator_container,
