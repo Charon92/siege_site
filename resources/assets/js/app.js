@@ -1,7 +1,8 @@
 import $ from 'jquery';
 
-require( './components/canvas.js');
-require( './components/carousel.js' );
+require( './components/canvas');
+require( './components/carousel' );
+// require( './components/fullPageScroll');
 require( '../../../node_modules/slick-carousel/slick/slick.js');
 
 const menuToggle = $('#menu-toggle');
@@ -50,9 +51,20 @@ $( () => {
 
 $( '.all_operators' ).slick({
   infinite: true,
+  autoplay: true,
+  autoplaySpeed: 5000,
   slidesToShow: 1,
   slidesToScroll: 1,
-  arrows: true,
+  arrows: false,
+});
+
+$( '.all_weapons' ).slick({
+  infinite: true,
+  autoplay: true,
+  autoplaySpeed: 5000,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
 });
 
 toggleForm();

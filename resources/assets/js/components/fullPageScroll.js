@@ -1,7 +1,8 @@
-const navOperator = $( '[data-anchor-operators' );
-const navWeapon = $( '[data-anchor-weapons' );
-const operatorTab = $('[data-operator' );
-const weaponTab = $( '[data-weapon]' );
+
+const navOperator = document.querySelectorAll( '[data-anchor-operators]' );
+const navWeapon = document.querySelectorAll( '[data-anchor-weapons]' );
+const operatorTab = document.querySelectorAll( '[data-operator]' );
+const weaponTab = document.querySelectorAll( '[data-weapon]' );
 
 navOperator.click( () => {
   const offset = 100;

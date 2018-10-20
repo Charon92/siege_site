@@ -96,9 +96,13 @@
   }
 }
 
+.button-group {
+  margin: $global-margin;
+}
+
 .all_operators,
 .all_weapons {
-  max-height: 95vh;
+  max-height: 100vh;
   height: 100vh;
   overflow: hidden;
   position: relative;
@@ -113,6 +117,10 @@
       .slick-slide {
         height: 100%;
         display: inline-flex;
+
+        > div {
+          width: 100%;
+        }
       }
     }
   }

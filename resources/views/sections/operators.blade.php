@@ -1,6 +1,6 @@
 @foreach ($operators as $operator)
 
-<div class="operator_container default_ctu large-12 grid-x medium-12 small-12 border-top" data-slide>
+<div class="operator_container default_ctu large-12 grid-x medium-12 small-12 border-top">
 
     <div class="large-6 small-12">
         <img class="operator" src="{{ asset( 'images/operators/' . $operator->fullimage ) }}" />

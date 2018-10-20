@@ -12,17 +12,21 @@
 @section('content')
 <div id="fullpage" class="column gutter">
 
-    <div id="section-0" class="grid-x recent_operators section">
+    <div id="section-0" class="grid-x recent_operators section" data-snap-point>
         @include( 'sections.recentOperators' )
     </div>
 
-    <div id="section-1" class="all_operators large-12 section" data-slideshow data-operators>
-            @include('sections.operators')
-    </div>
+    <section>
+            <div id="section-1" class="all_operators large-12 section" data-operators data-snap-point>
+                    @include('sections.operators')
+            </div>
+    </section>
 
-    <div id="section-2" class="all_weapons large-12 section" data-slideshow data-weapons>
-            @include('sections.weapons')
-    </div>
+    <section>
+        <div id="section-2" class="all_weapons large-12 section" data-weapons data-snap-point>
+                @include('sections.weapons')
+        </div>
+    </section>
 
 </div>
 @endsection
