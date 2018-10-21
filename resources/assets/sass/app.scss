@@ -101,7 +101,6 @@ body {
 // To override the grid-x flex-flow
 .body.grid-x.column {
   flex-direction: column;
-  height: 90vh;
 
   .center {
     margin: auto;
@@ -149,12 +148,13 @@ body {
   background-color: $third-bg-color;
   margin-top: $global-margin / 2;
   padding: $global-padding / 2;
+  width: 100%;
 }
 
 .info {
-  padding: $global-padding * 2;
+  // padding: $global-padding * 2;
   background-color: $second-bg-color;
-  min-height: 100vh;
+  height: auto;
 }
 
 .border-top {
@@ -284,3 +284,13 @@ img.weapon {
   }
 }
 
+.light-bg {
+  background-color: $third-bg-color;
+}
+
+.center-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: $global-padding $global-padding * 3;
+}

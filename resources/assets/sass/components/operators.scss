@@ -46,3 +46,19 @@
     }
   }
 }
+
+.operator-image-container {
+  min-height: 280px;
+}
+
+#operator-info {
+  .header_small {
+    margin: 0;
+    padding: $global-padding;
+  }
+}
+#weapon-info {
+  > div.large-6 {
+    padding: $global-padding;
+  }
+}

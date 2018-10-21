@@ -10454,6 +10454,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 __webpack_require__(3);
 __webpack_require__(4);
+// require( './components/fullPageScroll');
 __webpack_require__(5);
 
 var menuToggle = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('#menu-toggle');
@@ -10471,6 +10472,21 @@ function toggleForm() {
     form.classList.toggle('show');
   });
 }
+
+__WEBPACK_IMPORTED_MODULE_0_jquery___default()(function () {
+  var operatorInfo = document.getElementById('operator-info');
+  var operatorToggle = document.querySelector('[data-operator-info]');
+
+  var weaponInfo = document.getElementById('weapon-info');
+  var weaponToggle = document.querySelector('[data-operator-weapon]');
+
+  operatorToggle.addEventListener('click', function () {
+    operatorInfo.classList.toggle('show');
+  });
+  weaponToggle.addEventListener('click', function () {
+    weaponInfo.classList.toggle('show');
+  });
+});
 
 __WEBPACK_IMPORTED_MODULE_0_jquery___default()(function () {
   var $nav = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.title-bar');
@@ -10501,11 +10517,47 @@ __WEBPACK_IMPORTED_MODULE_0_jquery___default()(function () {
 });
 
 __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.all_operators').slick({
-  infinite: false,
+  infinite: true,
+  autoplay: true,
+  autoplaySpeed: 5000,
   slidesToShow: 1,
   slidesToScroll: 1,
-  arrows: true
+  arrows: false
 });
+
+__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.all_weapons').slick({
+  infinite: true,
+  autoplay: true,
+  autoplaySpeed: 5000,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false
+});
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const lazyImages = [].slice.call(document.querySelectorAll('img.lazy'));
+
+//   if ('IntersectionObserver' in window) {
+//     const lazyImageObserver = new IntersectionObserver( (entries, observer) => {
+//       entries.forEach( (entry) => {
+//         if (entry.isIntersecting) {
+//           const lazyImage = entry.target;
+//           lazyImage.src = lazyImage.dataset.src;
+//           lazyImage.srcset = lazyImage.dataset.srcset;
+//           lazyImage.classList.remove('lazy');
+//           lazyImageObserver.unobserve(lazyImage);
+//         }
+//       });
+//     });
+
+//     lazyImages.forEach( (lazyImage) => {
+//       lazyImageObserver.observe(lazyImage);
+//     });
+//   } else {
+//     // Possibly fall back to a more compatible method here
+//   }
+// });
+
 
 toggleForm();
 

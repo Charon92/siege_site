@@ -11,12 +11,13 @@
 }
 
 .title-bar {
-    max-height: 10vh;
+    height: 10vh;
     display: flex;
     width: 100%;
     position: relative;
     flex-direction: row;
     justify-content: space-between;
+    background: transparent;
     padding: 0;
     z-index: 1002;
     transition: all 250ms ease-in-out;

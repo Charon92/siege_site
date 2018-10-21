@@ -10,15 +10,15 @@ use Illuminate\Support\Facades\Validator;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware( 'auth' );
-    }
+    // /**
+    //  * Create a new controller instance.
+    //  *
+    //  * @return void
+    //  */
+    // public function __construct()
+    // {
+    //     $this->middleware( 'auth' );
+    // }
 
     /**
      * Show the application dashboard.
@@ -105,7 +105,25 @@ class HomeController extends Controller
     {
         $operator = DB::table( 'operator' )->where('id', $id)->get();
 
-        return view( 'pages.operator', ['operator' => $operator] );
+        $operatorCollection = $operator;
+
+        $weaponIds = array(
+            $operator[0]->first_weapon_id,
+            $operator[0]->second_weapon_id,
+            $operator[0]->third_weapon_id,
+            $operator[0]->fourth_weapon_id,
+            $operator[0]->fifth_weapon_id
+        );
+
+        $weapons = [];
+
+        foreach( $weaponIds as $weapon ){
+            array_push( $weapons, DB::table( 'weapon' )->where('id', $weapon)->get()->toArray() );
+        }
+
+        $operator = $operator[0];
+
+        return view( 'pages.operator', ['operator' => $operator, 'operatorCollection' => $operatorCollection, 'weapons' => $weapons] );
     }
 
     public function view_weapons()

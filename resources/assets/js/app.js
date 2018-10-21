@@ -22,6 +22,21 @@ function toggleForm() {
 }
 
 $( () => {
+  const operatorInfo = document.getElementById('operator-info');
+  const operatorToggle = document.querySelector('[data-operator-info]');
+
+  const weaponInfo = document.getElementById('weapon-info');
+  const weaponToggle = document.querySelector('[data-operator-weapon]');
+
+  operatorToggle.addEventListener('click', () => {
+    operatorInfo.classList.toggle('show');
+  });
+  weaponToggle.addEventListener('click', () => {
+    weaponInfo.classList.toggle('show');
+  })
+});
+
+$( () => {
   const $nav = $('.title-bar');
   const $icon = $('.title-bar a .logo');
   const $menuIcon = $('#menu-toggle');
@@ -66,5 +81,30 @@ $( '.all_weapons' ).slick({
   slidesToScroll: 1,
   arrows: false,
 });
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const lazyImages = [].slice.call(document.querySelectorAll('img.lazy'));
+
+//   if ('IntersectionObserver' in window) {
+//     const lazyImageObserver = new IntersectionObserver( (entries, observer) => {
+//       entries.forEach( (entry) => {
+//         if (entry.isIntersecting) {
+//           const lazyImage = entry.target;
+//           lazyImage.src = lazyImage.dataset.src;
+//           lazyImage.srcset = lazyImage.dataset.srcset;
+//           lazyImage.classList.remove('lazy');
+//           lazyImageObserver.unobserve(lazyImage);
+//         }
+//       });
+//     });
+
+//     lazyImages.forEach( (lazyImage) => {
+//       lazyImageObserver.observe(lazyImage);
+//     });
+//   } else {
+//     // Possibly fall back to a more compatible method here
+//   }
+// });
+
 
 toggleForm();

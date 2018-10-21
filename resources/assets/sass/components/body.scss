@@ -1,3 +1,27 @@
 .center {
     margin: 0 auto;
 }
+
+.styled {
+    width: 100%;
+    margin: 0 auto;
+    padding: $global-padding * 2;
+    background-color: $second-bg-color;
+    transition: all 250ms linear;
+    opacity: 0;
+    flex-wrap: wrap;
+    top: -1000px;
+    z-index: -20;
+
+    &.hidden {
+        display: none;
+    }
+
+    &.show {
+        top: 0;
+        opacity: 1;
+        display: flex;
+        transition: all 250ms linear;
+        z-index: 10;
+    }
+}
