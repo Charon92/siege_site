@@ -17,10 +17,10 @@
     <div class="large-8 small-12 info">
 
         <div class="header row border-bottom" data-operator-info>
-            <h2>Operator Information</h2>
+            <h2>Operator Information</h2> <i class="fi-plus"></i>
         </div>
 
-        <div id="operator-info" class="styled show grid-x">
+        <div id="operator-info" class="styled hidden grid-x">
             <p class="large-6"><strong>Name: </strong>{{ $operator->name }}</p>
             <p class="large-6"><strong>Fullname: </strong>{{ $operator->fullname }}</p>
             <p class="large-6"><strong>Position: </strong>{{ $operator->position }}</p>
@@ -40,44 +40,48 @@
         </div>
 
         <div class="header row border-bottom" data-operator-weapon>
-                <h2>Operator Weapons</h2>
-            </div>
+            <h2>Operator Weapons</h2> <i class="fi-plus"></i>
+        </div>
     
-            <div id="weapon-info" class="styled show grid-x">
-                @foreach ($weaponsArray as $key => $weapon)
-                <div class="large-6">
-                    <div class="header_small row">
-                        <h3>{{ $weapon->name }}</h3>
-                    </div>
-                    <div class="operator-image-container">
-                        <img class="ability-image lazy" src="{{ $imagePath.'/weapons/'.$weapon->image }}" alt="{{ $weapon->name }}" data-src="{{ $imagePath.'/weapons/'.$weapon->image }}"/>
-                    </div>
-                    <p>{{ $weapon->description }}</p>
-                    <p>Damage: {{ $weapon->damage }}</p>
-                    <p>Magazine: {{ $weapon->magazine }}</p>
-                    <p>Rate-of-fire: {{ $weapon->rateOfFire }}</p>
-                    <p>Mobility: {{ $weapon->mobility }}</p>
-                    <ul>Sights: 
-                        <li>{{ $weapon->{'first-sight'} }}</li>
-                        <li>{{ $weapon->{'second-sight'} }}</li>
-                        <li>{{ $weapon->{'third-sight'} }}</li>
-                        <li>{{ $weapon->{'fourth-sight'} }}</li>
-                    </ul>
-                    <ul>Barrel Attachments:
-                        <li>{{ $weapon->{'first-barrel'} }}</li>
-                        <li>{{ $weapon->{'second-barrel'} }}</li>  
-                        <li>{{ $weapon->{'third-barrel'} }}</li>  
-                        <li>{{ $weapon->{'fourth-barrel'} }}</li>  
-                        <li>{{ $weapon->{'fifth-barrel'} }}</li>      
-                    </ul>
-                    <ul>Grips: 
-                        <li>{{ $weapon->{'first-grip'} }}</li>
-                        <li>{{ $weapon->{'second-grip'} }}</li>
-                    </ul>
-                    <p>Underbarrel: {{ $weapon->underbarrel }}</p>
+        <div id="weapon-info" class="styled hidden grid-x">
+            @foreach ($weaponsArray as $key => $weapon)
+            <div class="large-6">
+                <div class="header_small row">
+                    <h3>{{ $weapon->name }}</h3>
                 </div>
-                @endforeach
+                <div class="operator-image-container">
+                    <img class="ability-image lazy" src="{{ $imagePath.'/weapons/'.$weapon->image }}" alt="{{ $weapon->name }}" data-src="{{ $imagePath.'/weapons/'.$weapon->image }}"/>
+                </div>
+                <p>{{ $weapon->description }}</p>
+                <p><strong>Damage:</strong> {{ $weapon->damage }}</p>
+                <p><strong>Magazine:</strong> {{ $weapon->magazine }}</p>
+                <p><strong>Rate-of-fire:</strong> {{ $weapon->rateOfFire }}</p>
+                <p><strong>Mobility:</strong> {{ $weapon->mobility }}</p>
+                <ul><strong>Sights: </strong>
+                    <li>{{ $weapon->{'first-sight'} }}</li>
+                    <li>{{ $weapon->{'second-sight'} }}</li>
+                    <li>{{ $weapon->{'third-sight'} }}</li>
+                    <li>{{ $weapon->{'fourth-sight'} }}</li>
+                </ul>
+                <ul><strong>Barrel Attachments:</strong>
+                    <li>{{ $weapon->{'first-barrel'} }}</li>
+                    <li>{{ $weapon->{'second-barrel'} }}</li>  
+                    <li>{{ $weapon->{'third-barrel'} }}</li>  
+                    <li>{{ $weapon->{'fourth-barrel'} }}</li>  
+                    <li>{{ $weapon->{'fifth-barrel'} }}</li>      
+                </ul>
+                <ul><strong>Grips: </strong>
+                    <li>{{ $weapon->{'first-grip'} }}</li>
+                    <li>{{ $weapon->{'second-grip'} }}</li>
+                </ul>
+                <p><strong>Underbarrel:</strong> {{ $weapon->underbarrel }}</p>
             </div>
+            @endforeach
+        </div>
+
+        <div class="header row border-bottom" data-operator-weapon>
+            <h2>Operator Tips</h2> <i class="fi-plus"></i>
+        </div>
 
     </div>
     <div class="large-4 small-12 image-container">

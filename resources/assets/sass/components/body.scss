@@ -12,6 +12,7 @@
     flex-wrap: wrap;
     top: -1000px;
     z-index: -20;
+    position: relative;
 
     &.hidden {
         display: none;
@@ -23,5 +24,16 @@
         display: flex;
         transition: all 250ms linear;
         z-index: 10;
+
+        &:after {
+            background: url("../images/r6-row-shape.png") 50% 0 no-repeat;
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 1px;
+        }
     }
 }

@@ -39,35 +39,33 @@ Route::get('/post/id={id}', 'HomeController@map')->name('viewPost');
  */
 Auth::routes();
 
-Route::view('/tartarus', 'tartarus')->name('login');
-Route::post('/tartarus', 'HomeController@login');
-
 Route::get('logout', array('uses' => 'HomeController@logout'));
 
-Route::prefix('taratarus')->group(function () {
-    Route::get('/admin', 'HomeController@admin')->name('admin');
+Route::prefix('admin')->group(function () {
+    Route::get('/', 'HomeController@admin')->name('admin');
+    Route::post('/', 'HomeController@login');
 
     // Operator specific pages
-    Route::get('/admin/operators', 'HomeController@operators')->name('operators');
-    Route::post('/admin/operators', 'HomeController@addOperator')->name('addOperator');
+    Route::get('/operators', 'HomeController@operators')->name('operators');
+    Route::post('/operators', 'HomeController@addOperator')->name('addOperator');
 
-    Route::get('/admin/operator/edit/{id}', 'HomeController@editOperator')->name('editOperator');
-    Route::post('/admin/operator/edit/{id}', 'HomeController@editOperator');
+    Route::get('/operator/edit/{id}', 'HomeController@editOperator')->name('editOperator');
+    Route::post('/operator/edit/{id}', 'HomeController@editOperator');
 
     // Weapon specific pages
-    Route::get('/admin/weapons', 'HomeController@weapons')->name('weapons');
-    Route::post('/admin/weapons', 'HomeController@addWeapons')->name('addWeapons');
+    Route::get('/weapons', 'HomeController@weapons')->name('weapons');
+    Route::post('/weapons', 'HomeController@addWeapons')->name('addWeapons');
 
-    Route::get('/admin/weapon/edit/{id}', 'HomeController@editWeapon')->name('editWeapon');
-    Route::post('/admin/weapon/edit/{id}', 'HomeController@editWeapon');
+    Route::get('/weapon/edit/{id}', 'HomeController@editWeapon')->name('editWeapon');
+    Route::post('/weapon/edit/{id}', 'HomeController@editWeapon');
 
     // Blog specific pages
-    Route::get('/admin/posts', 'HomeController@posts')->name('posts');
-    Route::post('/admin/posts', 'HomeController@createPost')->name('addPost');
+    Route::get('/posts', 'HomeController@posts')->name('posts');
+    Route::post('/posts', 'HomeController@createPost')->name('addPost');
 
-    Route::get('/admin/post/edit/{id}', 'HomeController@editPost')->name('editPost');
-    Route::post('/admin/post/edit/{id}', 'HomeController@editPost');
+    Route::get('/post/edit/{id}', 'HomeController@editPost')->name('editPost');
+    Route::post('/post/edit/{id}', 'HomeController@editPost');
 
     // View all suggestions
-    Route::get('/admin/suggestions', 'HomeController@suggestions')->name('viewSuggestions');
+    Route::get('/suggestions', 'HomeController@suggestions')->name('viewSuggestions');
 });

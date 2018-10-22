@@ -15,6 +15,7 @@
 @import 'node_modules/foundation-sites/scss/foundation';
 
 @include foundation-everything(true);
+@import '../foundation-icons/foundation-icons.css';
 
 // Everything else
 @import 'components/body';
@@ -25,7 +26,6 @@
 @import 'components/form';
 @import 'components/weapons';
 @import 'components/images';
-@import '../foundation-icons/foundation-icons.css';
 
 // Video background
 video#myVideo {
@@ -152,8 +152,9 @@ body {
 }
 
 .info {
-  // padding: $global-padding * 2;
+  margin-top: 5%;
   background-color: $second-bg-color;
+  box-shadow: 0px 8px 8px 5px rgba(0,0,0,0.5);
   height: auto;
 }
 

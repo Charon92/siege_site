@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
@@ -241,10 +242,14 @@ class HomeController extends Controller
 
     public function admin() 
     {
-        $operators = DB::table( 'operator' )->get();
-        $weapons = DB::table( 'weapon' )->get();
+        if( ! Auth::check() ){
+            return view( 'tartarus' );
+        } else {
+            $operators = DB::table( 'operator' )->get();
+            $weapons = DB::table( 'weapon' )->get();
 
-        return view( 'admin.dashboard', ['operators' => $operators, 'weapons' => $weapons] );
+            return view( 'admin.dashboard', ['operators' => $operators, 'weapons' => $weapons] );
+        }
     }
 
     public function logout()

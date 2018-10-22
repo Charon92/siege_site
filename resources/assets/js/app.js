@@ -1,6 +1,5 @@
 import $ from 'jquery';
 
-require( './components/canvas');
 require( './components/carousel' );
 // require( './components/fullPageScroll');
 require( '../../../node_modules/slick-carousel/slick/slick.js');
