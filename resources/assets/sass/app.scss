@@ -94,6 +94,10 @@ body {
   position: relative;
 }
 
+aside {
+  position: relative;
+}
+
 .scrolled {
   transition: all 250ms ease-in-out;
 }
@@ -153,7 +157,7 @@ body {
 
 .info {
   margin-top: 5%;
-  background-color: $second-bg-color;
+  background-color: $fourth-bg-color;
   box-shadow: 0px 8px 8px 5px rgba(0,0,0,0.5);
   height: auto;
 }

@@ -2,6 +2,7 @@ import $ from 'jquery';
 
 require( './components/carousel' );
 // require( './components/fullPageScroll');
+require( './components/pageLoadAnimation' );
 require( '../../../node_modules/slick-carousel/slick/slick.js');
 
 const menuToggle = $('#menu-toggle');
@@ -52,6 +53,18 @@ $( () => {
       $icon.removeClass( 'scrolled' );
       $menuIcon.removeClass( 'scrolled' );
     }
+  });
+});
+
+$( () => {
+  const tabs = [...document.getElementsByClassName( 'tab' )];
+  const info = document.getElementById( 'info' );
+
+  tabs.forEach( ( tab ) => {
+    tab.addEventListener( 'click', () => {
+      tab.classList.toggle( 'selected' );
+      info.classList.toggle( 'show' );
+    });
   });
 });
 

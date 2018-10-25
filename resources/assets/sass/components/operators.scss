@@ -47,6 +47,61 @@
   }
 }
 
+.operator {
+  .styled {
+    &.hidden {
+      top: 400%;
+      opacity: 0;
+      transition: all 500ms linear;
+    }
+    &.show {
+      top: 0;
+      opacity: 1;
+      transition: all 500ms linear;
+    }
+  }
+}
+.tab-holder {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  max-width: 8.33%;
+  background-color: $second-bg-color;
+  z-index: 11;
+
+  .tab {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: $global-padding * 2 $global-padding;
+    transition: all 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    &:after {
+      background: url('../images/r6-row-shape.png') 50% 0 no-repeat;
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+    }
+
+    &.selected {
+      box-shadow: 0px -3px 2px 3px rgba(0,0,0,0.35);
+    }
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0px -3px 2px 3px rgba(0,0,0,0.35); 
+      z-index: 5;
+      transition: all 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+  }
+}
+
 .operator-image-container {
   min-height: 280px;
   margin-bottom: $global-margin;
@@ -61,5 +116,16 @@
 #weapon-info {
   > div.large-6 {
     padding: $global-padding;
+  }
+}
+
+.info {
+  @extend .info;
+
+  position: relative;
+  top: 100%;
+
+  &.show {
+    top: 0%;
   }
 }

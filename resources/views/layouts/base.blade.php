@@ -23,10 +23,11 @@
             @endcomponent
             
             <aside class="large-1 small-12 column grid-x">
-                @component('sections.leftSidebar')
+                @section('left-sidebar')
+                    
     
                 @show
-                @endcomponent
+                 
             </aside>
 
             <section class="large-10 small-10 column body grid-x">

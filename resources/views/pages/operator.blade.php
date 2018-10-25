@@ -13,12 +13,23 @@
 @section('title', 'Rainbow Six Siege -')
 
 @section('content')
-<div class="grid-x">
-    <div class="large-8 small-12 info">
-
-        <div class="header row border-bottom" data-operator-info>
-            <h2>Operator Information</h2> <i class="fi-plus"></i>
-        </div>
+<div class="grid-x operator">
+    <div id="info" class="large-8 small-12 info hidden">
+        @section('left-sidebar')
+        <div class="large-12 tab-holder flex-column">
+                <div class="header tab" data-operator-info>
+                    <h4>Operator Information</h4>
+                </div>
+    
+                <div class="header tab" data-operator-weapon>
+                    <h4>Operator Weapons</h4>
+                </div>
+    
+                <div class="header tab" data-operator-tips>
+                    <h4>Operator Tips</h4>
+                </div>
+            </div>
+        @endsection
 
         <div id="operator-info" class="styled hidden grid-x">
             <p class="large-6"><strong>Name: </strong>{{ $operator->name }}</p>
@@ -37,10 +48,6 @@
             <div class="large-6 light-bg center-text">
                 <h5>{{ $operator->ability_description }}</h5>
             </div>
-        </div>
-
-        <div class="header row border-bottom" data-operator-weapon>
-            <h2>Operator Weapons</h2> <i class="fi-plus"></i>
         </div>
     
         <div id="weapon-info" class="styled hidden grid-x">
@@ -79,12 +86,8 @@
             @endforeach
         </div>
 
-        <div class="header row border-bottom" data-operator-weapon>
-            <h2>Operator Tips</h2> <i class="fi-plus"></i>
-        </div>
-
     </div>
-    <div class="large-4 small-12 image-container">
+    <div id="image-container" class="large-4 small-12 image-container hidden">
         <img class="main-image" src="{{ $imagePath }}/{{ $operator->fullimage }}" alt="{{ $operator->name }}" />
     </div>
 </div>
