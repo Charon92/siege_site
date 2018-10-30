@@ -388,29 +388,29 @@ class HomeController extends Controller
         $image = $request->file('image');
         $imageName = $image->getClientOriginalName();
         //checking if file exsists
-        if(file_exists(public_path("/images/operators/weapons/$imageName"))){ unlink(public_path("/images/operators/weapons/$imageName")); };
-        $image->move(public_path('/images/operators/weapons'), $imageName);
+        if( file_exists( public_path( '/images/operators/weapons/$imageName' ) ) ){ unlink( public_path( '/images/operators/weapons/$imageName' ) ); };
+        $image->move( public_path( '/images/operators/weapons' ), $imageName);
         
         // create our weapons data for the authentication
         $weaponData = array(
-            'name'     => Input::get('name'),
+            'name'     => Input::get( 'name' ),
             'image'  => $imageName,
-            'description'  => Input::get('description'),
-            'damage'  => Input::get('damage'),
-            'magazine'  => Input::get('magazine'),
-            'rateOfFire'  => Input::get('rate-of-fire'),
-            'mobility'  => Input::get('mobility'),
-            'first_sight'  => Input::get('first-sight'),
-            'second_sight'  => Input::get('second-sight'),
-            'third_sight'  => Input::get('third-sight'),
-            'fourth_sight'  => Input::get('fourth-sight'),
-            'first_barrel'  => Input::get('first-barrel'),
-            'second_barrel'  => Input::get('second-barrel'),
-            'third_barrel'  => Input::get('third-barrel'),
-            'fourth_barrel'  => Input::get('fourth-barrel'),
-            'first_grip'  => Input::get('first-grip'),
-            'second_grip'  => Input::get('second-grip'),
-            'underbarrel'  => Input::get('underbarrel'),
+            'description'  => Input::get( 'description' ),
+            'damage'  => Input::get( 'damage' ),
+            'magazine'  => Input::get( 'magazine' ),
+            'rateOfFire'  => Input::get( 'rate-of-fire' ),
+            'mobility'  => Input::get( 'mobility' ),
+            'first_sight'  => Input::get( 'first-sight' ),
+            'second_sight'  => Input::get( 'second-sight' ),
+            'third_sight'  => Input::get( 'third-sight' ),
+            'fourth_sight'  => Input::get( 'fourth-sight' ),
+            'first_barrel'  => Input::get( 'first-barrel' ),
+            'second_barrel'  => Input::get( 'second-barrel' ),
+            'third_barrel'  => Input::get( 'third-barrel' ),
+            'fourth_barrel'  => Input::get( 'fourth-barrel' ),
+            'first_grip'  => Input::get( 'first-grip' ),
+            'second_grip'  => Input::get( 'second-grip' ),
+            'underbarrel'  => Input::get( 'underbarrel' ),
         );
 
         DB::table('weapon')->insert([

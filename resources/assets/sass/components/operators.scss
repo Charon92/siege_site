@@ -90,14 +90,21 @@
     }
 
     &.selected {
-      box-shadow: 0px -3px 2px 3px rgba(0,0,0,0.35);
+      background-color: $white;
+
+      h4 {
+        color: $fourth-bg-color;
+      }
     }
 
     &:hover {
       cursor: pointer;
-      box-shadow: 0px -3px 2px 3px rgba(0,0,0,0.35); 
-      z-index: 5;
+      background-color: $white;
       transition: all 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
+
+      h4 {
+        color: $fourth-bg-color;
+      }
     }
   }
 }
